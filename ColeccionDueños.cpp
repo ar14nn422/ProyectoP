@@ -45,7 +45,7 @@ void ColeccionDueños::ingresarDuennos(Dueño* nuevodue�o)
 	}
 }
 
-string ColeccionDueños::mostrarDue�os()
+string ColeccionDueños::mostrarDueños()
 {
 	stringstream s;
 	for (int i = 0; i < cant; i++) {

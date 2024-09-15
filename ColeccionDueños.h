@@ -12,6 +12,6 @@ public:
 	int getTam();
 	int getCant();
 	void ingresarDuennos(Dueño*);
-	string mostrarDue�os();
+	string mostrarDueños();
 
 };

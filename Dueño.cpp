@@ -4,7 +4,7 @@ Dueño::Dueño() {
 	id = " ";
 	mascotas = nullptr;
 }
-Dueño::Dueño(string nombred, string id coleccionmascotas* mascotas) {
+Dueño::Dueño(string nombred, string id ,coleccionmascotas* mascotas) {
 	NombreDuenno = nombred;
 	id = id;
 	mascotas = mascotas;
@@ -38,18 +38,17 @@ coleccionmascotas* Dueño::getMascotas()
 	return mascotas;
 }
 
-void Dueño::asignarMascotas()
+void Dueño::asignarMascotas(mascota* nuevaMascota)
 {
-	mascota* nuevaMascota = new coleccionmascotas();
-	mascota->agregarMascota(nuevaMascota);
-
+	mascotas->agregarMascota(nuevaMascota);
 }
+
 
 string Dueño::mostrarMasc_d()
 {
 	stringstream s;
 	s << "Dueño:" << NombreDuenno << endl;
 	s << "Número de identidficación:" << id << endl;
-	s << "Mascotas asociadas:" << mostrarMascotas() << endl;
+	s << "Mascotas asociadas:" << mascotas->mostrarMascotas() << endl;
 	return s.str();
 }

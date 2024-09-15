@@ -51,7 +51,7 @@ string coleccionmascotas::mostrarMascotas()
 {
 	stringstream s;
 	for (int i = 0; i < cant; i++) {
-		s << mascotas[i]->mostrarMascotas() << endl;
+		s << mascotas[i]->mostrarMascota() << endl;
 	}
 	return s.str();
 }
