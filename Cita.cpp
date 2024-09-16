@@ -1,6 +1,6 @@
 ﻿#include "Cita.h"
 
-Cita::Cita(int hora, string dia, bool estado, ColeccionDoctores* doctor, ColeccionDueños* duenno, coleccionmascotas* paciente)
+Cita::Cita(int hora, string dia, bool estado, especialidad* doctor, ColeccionDueños* duenno, coleccionmascotas* paciente)
 {
 	hora = hora;
 	dia = dia;
@@ -50,7 +50,7 @@ bool Cita::getEstado()
 	return false;
 }
 
-ColeccionDoctores* Cita::getDoctor()
+especialidad* Cita::getDoctor()
 {
 	return doctor;
 }
@@ -65,10 +65,10 @@ coleccionmascotas* Cita::getPaciente()
 	return paciente;
 }
 
-void Cita::setDoctor(ColeccionDoctores* doctor)
+void Cita::setDoctor(especialidad* doctor)
 {
 	if (doctor == nullptr) {
-		doctor = new ColeccionDoctores(*doctor);
+		doctor = new especialidad(*doctor);
 	}
 }
 
@@ -98,7 +98,7 @@ void Cita::cancelarCita()
 
 void Cita::modificarCita(int hora, string dia)//
 {
-	if (getEstado == true) {
+	if (getEstado() == true) {
 		setHora(hora);
 		setDia(dia);
 	}
@@ -107,7 +107,7 @@ void Cita::modificarCita(int hora, string dia)//
 string Cita::ImprimirCita()
 {
 	stringstream s;
-	s << "D�a de su cita:" << dia << endl;
+	s << "Dia de su cita:" << dia << endl;
 	s << "Hora de su cita:" << hora << endl;
 	s << "Para el paciente:" << paciente << endl;
 	return s.str();
