@@ -6,16 +6,27 @@ using namespace std;
 class doctor {
 private:
 	string nombre;
-	doctor** masc;
+	mascota** masc;
+	horas** lunes;
+	horas** martes;
+	horas** miercoles;
+	horas** jueves;
+	horas** viernes;
+	horas** sabado;
 	int tam;
 	int cant;
-	int semana;
-	int diaAc;
-	doctor** dias;
+	int hora;
 public:
 	doctor(string);
 	void generarHorario();
+	void llamarLunes();
+	void llamarMartes();
+	void llamarMiercoles();
+	void llamarJueves();
+	void llamarViernes();
+	void llamarSabado();
 	void agregarPaciente(mascota*);
+	void borrarPaciente();
 	string getPacientes();
 	~doctor();
 };
