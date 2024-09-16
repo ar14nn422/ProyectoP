@@ -6,7 +6,7 @@ class coleccionmascotas {
 private:
 	int cant;
 	int tam;
-	coleccionmascotas** mascotas;
+	mascota** mascotas;
 
 public:
 	coleccionmascotas(int);

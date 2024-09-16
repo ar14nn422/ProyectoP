@@ -3,11 +3,11 @@
 #ifndef DUEÑO_H
 #define DUEÑO_H
 class Dueño {
-public:
+private:
 	string NombreDuenno;
 	string id;
 	coleccionmascotas* mascotas;
-private:
+public:
 	Dueño();
 	Dueño(string, string, coleccionmascotas*);
 	void setNombreDuenno(string);
@@ -16,7 +16,7 @@ private:
 	string getNombreDuenno();
 	string getId();
 	coleccionmascotas* getMascotas();
-	void asignarMascotas();
+	void asignarMascotas(mascota*);
 	string mostrarMasc_d();
 
 
