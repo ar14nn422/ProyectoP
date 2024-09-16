@@ -5,8 +5,8 @@ using namespace std;
 
 class especialidad {
 private:
-	string especialidad;
-	especialidad** doc;
+	string espe;
+	doctor** doc;
 	int tam = 10;
 	int cant = 0;
 public:
