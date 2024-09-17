@@ -68,90 +68,11 @@ void doctor::llamarLunes() {
 		cout << "9-(5:00pm-6:00pm)" << endl;
 		cout << "10-(6:00pm-7:00pm)" << endl;
 		cin >> lunr;
-		switch (lunr)
-		{
-		case 1:
-			if (lunes[lunr]->getEstado() == false) {
-				lunes[lunr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 2:
-			if (lunes[lunr]->getEstado() == false) {
-				lunes[lunr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 3:
-			if (lunes[lunr]->getEstado() == false) {
-				lunes[lunr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 4:
-			if (lunes[lunr]->getEstado() == false) {
-				lunes[lunr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 5:
-			if (lunes[lunr]->getEstado() == false) {
-				lunes[lunr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 6:
-			if (lunes[lunr]->getEstado() == false) {
-				lunes[lunr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 7:
-			if (lunes[lunr]->getEstado() == false) {
-				lunes[lunr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 8:
-			if (lunes[lunr]->getEstado() == false) {
-				lunes[lunr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 9:
-			if (lunes[lunr]->getEstado() == false) {
-				lunes[lunr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 10:
-			if (lunes[lunr]->getEstado() == false) {
-				lunes[lunr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		default:
-			break;
+		if (lunes[lunr]->getEstado() == false) {
+			lunes[lunr]->setEstado(true);
+		}
+		else {
+			cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
 		}
 		system("CLS");
 		cout << "Desea ingresar una cita nueva?(s/n)" << endl;
@@ -179,90 +100,11 @@ void doctor::llamarMartes() {
 		cout << "9-(5:00pm-6:00pm)" << endl;
 		cout << "10-(6:00pm-7:00pm)" << endl;
 		cin >> marr;
-		switch (marr)
-		{
-		case 1:
-			if (martes[marr]->getEstado() == false) {
-				martes[marr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 2:
-			if (martes[marr]->getEstado() == false) {
-				martes[marr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 3:
-			if (martes[marr]->getEstado() == false) {
-				martes[marr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 4:
-			if (martes[marr]->getEstado() == false) {
-				martes[marr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 5:
-			if (martes[marr]->getEstado() == false) {
-				martes[marr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 6:
-			if (martes[marr]->getEstado() == false) {
-				martes[marr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 7:
-			if (martes[marr]->getEstado() == false) {
-				martes[marr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 8:
-			if (martes[marr]->getEstado() == false) {
-				martes[marr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 9:
-			if (martes[marr]->getEstado() == false) {
-				martes[marr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 10:
-			if (martes[marr]->getEstado() == false) {
-				martes[marr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		default:
-			break;
+		if (martes[marr]->getEstado() == false) {
+			martes[marr]->setEstado(true);
+		}
+		else {
+			cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
 		}
 		system("CLS");
 		cout << "Desea ingresar una cita nueva?(s/n)" << endl;
@@ -289,92 +131,12 @@ void doctor::llamarMiercoles() {
 		cout << "9-(5:00pm-6:00pm)" << endl;
 		cout << "10-(6:00pm-7:00pm)" << endl;
 		cin >> mierr;
-		switch (mierr)
-		{
-		case 1:
-			if (miercoles[mierr]->getEstado() == false) {
-				miercoles[mierr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 2:
-			if (miercoles[mierr]->getEstado() == false) {
-				miercoles[mierr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 3:
-			if (miercoles[mierr]->getEstado() == false) {
-				miercoles[mierr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 4:
-			if (miercoles[mierr]->getEstado() == false) {
-				miercoles[mierr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 5:
-			if (miercoles[mierr]->getEstado() == false) {
-				miercoles[mierr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 6:
-			if (miercoles[mierr]->getEstado() == false) {
-				miercoles[mierr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 7:
-			if (miercoles[mierr]->getEstado() == false) {
-				miercoles[mierr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 8:
-			if (miercoles[mierr]->getEstado() == false) {
-				miercoles[mierr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 9:
-			if (miercoles[mierr]->getEstado() == false) {
-				miercoles[mierr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 10:
-			if (miercoles[mierr]->getEstado() == false) {
-				miercoles[mierr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		default:
-			break;
+		if (miercoles[mierr]->getEstado() == false) {
+			miercoles[mierr]->setEstado(true);
 		}
-
+		else {
+			cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
+		}
 		system("CLS");
 		cout << "Desea ingresar una cita nueva?(s/n)" << endl;
 		cin >> usurmc;
