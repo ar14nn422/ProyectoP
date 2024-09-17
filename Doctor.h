@@ -28,6 +28,7 @@ public:
 	void agregarPaciente(mascota*);
 	void borrarPaciente();
 	string getPacientes();
+	string getNombreDoc();
 	~doctor();
 };
 #endif // 

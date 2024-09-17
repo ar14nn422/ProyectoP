@@ -400,92 +400,12 @@ void doctor::llamarJueves() {
 		cout << "9-(5:00pm-6:00pm)" << endl;
 		cout << "10-(6:00pm-7:00pm)" << endl;
 		cin >> juevr;
-		switch (juevr)
-		{
-		case 1:
-			if (jueves[juevr]->getEstado() == false) {
-				jueves[juevr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 2:
-			if (jueves[juevr]->getEstado() == false) {
-				jueves[juevr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 3:
-			if (jueves[juevr]->getEstado() == false) {
-				jueves[juevr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 4:
-			if (jueves[juevr]->getEstado() == false) {
-				jueves[juevr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 5:
-			if (jueves[juevr]->getEstado() == false) {
-				jueves[juevr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 6:
-			if (jueves[juevr]->getEstado() == false) {
-				jueves[juevr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 7:
-			if (jueves[juevr]->getEstado() == false) {
-				jueves[juevr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 8:
-			if (jueves[juevr]->getEstado() == false) {
-				jueves[juevr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 9:
-			if (jueves[juevr]->getEstado() == false) {
-				jueves[juevr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 10:
-			if (jueves[juevr]->getEstado() == false) {
-				jueves[juevr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		default:
-			break;
+		if (jueves[juevr]->getEstado() == false) {
+			jueves[juevr]->setEstado(true);
 		}
-
+		else {
+			cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
+		}
 		system("CLS");
 		cout << "Desea ingresar una cita nueva?(s/n)" << endl;
 		cin >> usurj;
@@ -511,90 +431,11 @@ void doctor::llamarViernes() {
 		cout << "9-(5:00pm-6:00pm)" << endl;
 		cout << "10-(6:00pm-7:00pm)" << endl;
 		cin >> vierr;
-		switch (vierr)
-		{
-		case 1:
-			if (viernes[vierr]->getEstado() == false) {
-				viernes[vierr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 2:
-			if (viernes[vierr]->getEstado() == false) {
-				viernes[vierr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 3:
-			if (viernes[vierr]->getEstado() == false) {
-				viernes[vierr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 4:
-			if (viernes[vierr]->getEstado() == false) {
-				viernes[vierr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 5:
-			if (viernes[vierr]->getEstado() == false) {
-				viernes[vierr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 6:
-			if (viernes[vierr]->getEstado() == false) {
-				viernes[vierr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 7:
-			if (viernes[vierr]->getEstado() == false) {
-				viernes[vierr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 8:
-			if (viernes[vierr]->getEstado() == false) {
-				viernes[vierr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 9:
-			if (viernes[vierr]->getEstado() == false) {
-				viernes[vierr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 10:
-			if (viernes[vierr]->getEstado() == false) {
-				viernes[vierr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		default:
-			break;
+		if (viernes[vierr]->getEstado() == false) {
+			viernes[vierr]->setEstado(true);
+		}
+		else {
+			cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
 		}
 		system("CLS");
 		cout << "Desea ingresar una cita nueva?(s/n)" << endl;
@@ -621,90 +462,11 @@ void doctor::llamarSabado() {
 		cout << "9-(5:00pm-6:00pm)" << endl;
 		cout << "10-(6:00pm-7:00pm)" << endl;
 		cin >> sabr;
-		switch (sabr)
-		{
-		case 1:
-			if (sabado[sabr]->getEstado() == false) {
-				sabado[sabr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 2:
-			if (sabado[sabr]->getEstado() == false) {
-				sabado[sabr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 3:
-			if (sabado[sabr]->getEstado() == false) {
-				sabado[sabr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 4:
-			if (sabado[sabr]->getEstado() == false) {
-				sabado[sabr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 5:
-			if (sabado[sabr]->getEstado() == false) {
-				sabado[sabr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 6:
-			if (sabado[sabr]->getEstado() == false) {
-				sabado[sabr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 7:
-			if (sabado[sabr]->getEstado() == false) {
-				sabado[sabr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 8:
-			if (sabado[sabr]->getEstado() == false) {
-				sabado[sabr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 9:
-			if (sabado[sabr]->getEstado() == false) {
-				sabado[sabr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		case 10:
-			if (sabado[sabr]->getEstado() == false) {
-				sabado[sabr]->setEstado(true);
-			}
-			else {
-				cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
-			}
-			break;
-		default:
-			break;
+		if (sabado[sabr]->getEstado() == false) {
+			sabado[sabr]->setEstado(true);
+		}
+		else {
+			cout << "No se puede registrar la cita dado a que el horario se encuentra ocupado" << endl;
 		}
 		system("CLS");
 		cout << "Desea ingresar una cita nueva?(s/n)" << endl;
@@ -734,6 +496,9 @@ string doctor::getPacientes() {
 		s << masc[i]->mostrarMascota();
 		return s.str();
 	}
+string doctor::getNombreDoc() {
+	return nombre;
+}
 doctor::~doctor() {
 	for (int i = 0; i < tam;i++) {
 		delete masc[i];

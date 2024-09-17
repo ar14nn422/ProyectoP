@@ -133,6 +133,7 @@
     <ClCompile Include="coleccionmascotas.cpp" />
     <ClCompile Include="Doctor.cpp" />
     <ClCompile Include="Dueño.cpp" />
+    <ClCompile Include="especialidad.cpp" />
     <ClCompile Include="horas.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mascota.cpp" />

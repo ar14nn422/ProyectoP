@@ -5,10 +5,10 @@ using namespace std;
 
 class especialidad {
 private:
-	string especialidad;
-	especialidad** doc;
-	int tam = 10;
-	int cant = 0;
+	string espe;
+	doctor** doc;
+	int tam ;
+	int cant;
 public:
 	especialidad(string);
 	void agregarDoctor(doctor*);
