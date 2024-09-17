@@ -91,7 +91,7 @@ void Cita::reactivarCita()
 	setEstado(true);
 }
 
-void Cita::cancelarCita()
+/*void Cita::cancelarCita()
 {
 	setEstado(false);
 }
@@ -102,7 +102,7 @@ void Cita::modificarCita(int hora, string dia)//
 		setHora(hora);
 		setDia(dia);
 	}
-}
+}*/
 
 string Cita::ImprimirCita()
 {

@@ -6,7 +6,7 @@ private:
 	int hora;
 	string dia;
 	bool estado;
-	especialidad* doctor;//cambiar por el nombre de la coleccion
+	especialidad* doctor;
 	ColeccionDueños* duenno;
 	coleccionmascotas* paciente;
 public:
@@ -25,8 +25,6 @@ public:
 	void setDuenno(ColeccionDueños*);
 	void setPaciente(coleccionmascotas*);
 	void reactivarCita();
-	void cancelarCita();
-	void modificarCita(int, string);
 	string ImprimirCita();
 
 
