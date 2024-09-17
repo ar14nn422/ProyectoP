@@ -7,8 +7,8 @@ class especialidad {
 private:
 	string espe;
 	doctor** doc;
-	int tam = 10;
-	int cant = 0;
+	int tam ;
+	int cant;
 public:
 	especialidad(string);
 	void agregarDoctor(doctor*);
