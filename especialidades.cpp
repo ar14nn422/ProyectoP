@@ -5,13 +5,13 @@ especialidades::especialidades() {
 	tam = 7;
 	esp = new especialidad * [tam];
 }
-void especialidades::agregarEspecialidad(especialidad* espc) {
-	char respuesta;
+void especialidades::agregarEspecialidad(string espc) {
+	char respuesta=' ';
 	do {
 		if (cant < tam) {
 			for (int i = 0;i < tam;i++) {
 				if (esp[i]->getEspecialidad() != esp[i]->getEspecialidad()) {
-					esp[cant] = espc;
+					esp[cant]->setEspecialidad(espc);
 					cant++;
 				}
 				else {

@@ -1,37 +1,55 @@
 #include"menuprincipal.h"
 
 menuprincipal::menuprincipal() {
-
+	for (int i = 0;i < 7;i++) {
+		
+	}
 }
 void menuprincipal::menu() {
 	int respuesta;
-
-	cout << "Menu principal del sistema hospitalario" << endl << endl;
-	cout << "1-Submenu de Administracion" << endl;
-	cout << "2-Submenu de control de citas" << endl;
-	cout << "3-Submenu para Busquedas y listados" << endl;
-	cout << "Favor ingrese su respuesta: " << endl;
-	cin >> respuesta;
-	switch (respuesta)
-	{
-	case 1:
-		system("cls");
-		opcionUno();
-		break;
-	case 2:
-		system("cls");
-		opcionDos();
-		break;
-	case 3:
-		system("cls");
-		opcionTres();
-		break;
-	default:
-		break;
-	}
+	char respuestaFinal;
+	do {
+		cout << "Menu principal del sistema hospitalario" << endl << endl;
+		cout << "1-Submenu de Administracion" << endl;
+		cout << "2-Submenu de control de citas" << endl;
+		cout << "3-Submenu para Busquedas y listados" << endl;
+		cout << "Favor ingrese su respuesta: " << endl;
+		cin >> respuesta;
+		switch (respuesta)
+		{
+		case 1:
+			system("cls");
+			opcionUno();
+			cout << "Desea realizar alguna otra funcion?(s/n)" << endl;
+			cin >> respuestaFinal;
+			system("cls");
+			break;
+		case 2:
+			system("cls");
+			opcionDos();
+			cout << "Desea realizar alguna otra funcion?(s/n)" << endl;
+			cin >> respuestaFinal;
+			system("cls");
+			break;
+		case 3:
+			system("cls");
+			opcionTres();
+			cout << "Desea realizar alguna otra funcion?(s/n)" << endl;
+			cin >> respuestaFinal;
+			system("cls");
+			break;
+		default:
+			cout << "Desea realizar alguna otra funcion?(s/n)" << endl;
+			cin >> respuestaFinal;
+			system("cls");
+			break;
+		}
+	} while (respuestaFinal == 's');
+	
 }
 void menuprincipal::opcionUno() {
 	int respuesta;
+	string espec;
 	cout << "Submenu de administracion" << endl << endl;
 	cout << "1-Ingresar especialidades" << endl;
 	cout << "2-Ingresar Doctor (Por especialidad)" << endl;

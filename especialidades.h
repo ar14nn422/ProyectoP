@@ -9,7 +9,7 @@ private:
 	especialidad** esp;
 public:
 	especialidades();
-	void agregarEspecialidad(especialidad*);
+	void agregarEspecialidad(string);
 	~especialidades();
 };
 

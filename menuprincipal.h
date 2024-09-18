@@ -1,11 +1,12 @@
 #ifndef MENUPRINCIPAL_H
 #define MENUPRINCIPAL_H
-#include<iostream>
-#include<sstream>
-//Cuando tengamos el header de citas lo tenemos que poner para llamar los metodos para los menu
+#include"especialidades.h"
+#include"especialidad.h"
+#include"Doctor.h"
 using namespace std;
 class menuprincipal {
-
+private:
+	especialidad** espci;
 public:
 	menuprincipal();
 	void menu();
