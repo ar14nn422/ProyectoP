@@ -11,6 +11,7 @@ public:
 	menuprincipal();
 	void menu();
 	void opcionUno();
+	void adminOpUno();
 	void opcionDos();
 	void opcionTres();
 	~menuprincipal();

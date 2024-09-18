@@ -52,24 +52,13 @@ void menuprincipal::opcionUno() {
 	cout << "1-Ingresar especialidades" << endl;
 	cout << "2-Ingresar Doctor (Por especialidad)" << endl;
 	cout << "3-Ingresar Duenno" << endl;
-	cout << "4- Ingresar Mascota(por due?o)" << endl;
+	cout << "4- Ingresar Mascota(por duenno)" << endl;
 	cout << "0-Regresar al menu principal" << endl;
 	cout << "Favor ingrese su respuesta: " << endl;
 	cin >> respuesta;
 	switch (respuesta) {
 	case 1:
-		system("cls");
-		cout << "Favor ingresar el nombre de la especialidad" << endl;
-		getline(cin, nombreEsp);
-		especialidad* esp = new especialidad(nombreEsp);
-		bool estado = esps->agregarEspecialidad(esp);
-		if (estado==false) {
-			cout << "La especialidad se encuentra registrada" << endl;
-		}
-		else {
-			cout << "Se ha agregado la especialidad con exito" << endl;
-		}
-		break;
+		break;	
 	case 2:
 		system("cls");
 		break;
@@ -88,6 +77,9 @@ void menuprincipal::opcionUno() {
 		opcionUno();
 		break;
 	}
+}
+void menuprincipal::adminOpUno() {
+
 }
 void menuprincipal::opcionDos() {
 	int respuesta;
