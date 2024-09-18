@@ -1,15 +1,16 @@
 #ifndef ESPECIALIDADES_H
 #define ESPECIALIDADES_H
-#include"especialidad.h"
-using namespace std;
+#include "especialidad.h"
+
 class especialidades {
 private:
-	int tam;
-	int cant ;
-	especialidad** esp;
+	int tamanoEspecialidades;
+	int cantidadEspecialidades;
+	especialidad** nombreEspecialidad;
 public:
 	especialidades();
-	void agregarEspecialidad(string);
+	bool agregarEspecialidad(especialidad*);
+	string mostrarEspecialidades();
 	~especialidades();
 };
 

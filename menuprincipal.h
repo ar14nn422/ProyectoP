@@ -6,12 +6,13 @@
 using namespace std;
 class menuprincipal {
 private:
-	especialidad** espci;
+	especialidades* esps;
 public:
 	menuprincipal();
 	void menu();
 	void opcionUno();
 	void opcionDos();
 	void opcionTres();
+	~menuprincipal();
 };
 #endif 

@@ -1,9 +1,7 @@
 #include"menuprincipal.h"
 
 menuprincipal::menuprincipal() {
-	for (int i = 0;i < 7;i++) {
-		
-	}
+	esps = new especialidades;
 }
 void menuprincipal::menu() {
 	int respuesta;
@@ -49,11 +47,11 @@ void menuprincipal::menu() {
 }
 void menuprincipal::opcionUno() {
 	int respuesta;
-	string espec;
+	string nombreEsp;
 	cout << "Submenu de administracion" << endl << endl;
 	cout << "1-Ingresar especialidades" << endl;
 	cout << "2-Ingresar Doctor (Por especialidad)" << endl;
-	cout << "3-Ingresar Due?o" << endl;
+	cout << "3-Ingresar Duenno" << endl;
 	cout << "4- Ingresar Mascota(por due?o)" << endl;
 	cout << "0-Regresar al menu principal" << endl;
 	cout << "Favor ingrese su respuesta: " << endl;
@@ -61,6 +59,16 @@ void menuprincipal::opcionUno() {
 	switch (respuesta) {
 	case 1:
 		system("cls");
+		cout << "Favor ingresar el nombre de la especialidad" << endl;
+		getline(cin, nombreEsp);
+		especialidad* esp = new especialidad(nombreEsp);
+		bool estado = esps->agregarEspecialidad(esp);
+		if (estado==false) {
+			cout << "La especialidad se encuentra registrada" << endl;
+		}
+		else {
+			cout << "Se ha agregado la especialidad con exito" << endl;
+		}
 		break;
 	case 2:
 		system("cls");
@@ -120,7 +128,7 @@ void menuprincipal::opcionTres() {
 	cout << "Submenu para Busquedas y listados" << endl << endl;
 	cout << "1-Mostrar Listados de Especialidades" << endl;
 	cout << "2-Mostrar Listado de Doctores por Especialidad" << endl;
-	cout << "3-Mostrar Due?os por Mascotas" << endl;
+	cout << "3-Mostrar Duennos por Mascotas" << endl;
 	cout << "4- Mostrar Pacientes por Doctor" << endl;
 	cout << "0-Regresar al menu principal" << endl;
 	cout << "Favor ingrese su respuesta: " << endl;
@@ -147,4 +155,6 @@ void menuprincipal::opcionTres() {
 		opcionDos();
 		break;
 	}
+}
+menuprincipal::~menuprincipal() {
 }

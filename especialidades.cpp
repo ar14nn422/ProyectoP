@@ -1,31 +1,31 @@
-#include"especialidades.h"
+#include "especialidades.h"
 
 especialidades::especialidades() {
-	cant = 0;
-	tam = 7;
-	esp = new especialidad * [tam];
+	tamanoEspecialidades = 7;
+	cantidadEspecialidades = 0;
+	nombreEspecialidad = new especialidad * [tamanoEspecialidades];
+	for (int i = 0;i < tamanoEspecialidades;i++) {
+		nombreEspecialidad[i] = NULL;
+	}
 }
-void especialidades::agregarEspecialidad(string espc) {
-	char respuesta=' ';
-	do {
-		if (cant < tam) {
-			for (int i = 0;i < tam;i++) {
-				if (esp[i]->getEspecialidad() != esp[i]->getEspecialidad()) {
-					esp[cant]->setEspecialidad(espc);
-					cant++;
-				}
-				else {
-					cout << "Esta especialidad se encuentra registrada" << endl;
-				}
+bool especialidades::agregarEspecialidad(especialidad* especialidad) {
+	if (cantidadEspecialidades < tamanoEspecialidades - 1) {
+		for (int i = 0;i < cantidadEspecialidades;i++) {
+			if (especialidad->getNombreEsp() == nombreEspecialidad[i]->getNombreEsp()) {
+				return false;
 			}
-			cout << "Desea registrar otra especialidad?(s/n)" << endl;
-			cin >> respuesta;
 		}
-	} while (respuesta == 's');
+	}
+	nombreEspecialidad[cantidadEspecialidades] = especialidad;
+	cantidadEspecialidades++;
+	return true;
+}
+string especialidades::mostrarEspecialidades() {
+
 }
 especialidades::~especialidades() {
-	for (int i = 0;i < tam;i++) {
-		delete esp[i];
+	for (int i = 0;i < cantidadEspecialidades;i++) {
+		delete nombreEspecialidad[i];
 	}
-	delete[] esp;
+	delete[] nombreEspecialidad;
 }

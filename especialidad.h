@@ -5,15 +5,13 @@ using namespace std;
 
 class especialidad {
 private:
-	string espe;
+	string nombreEspecialidad;
 	doctor** doc;
-	int tam ;
-	int cant;
 public:
+	especialidad();
 	especialidad(string);
-	void agregarDoctor(doctor*);
-	void setEspecialidad(string);
-	string getEspecialidad();
+	void setNombreEsp(string);
+	string getNombreEsp();
 	~especialidad();
 };
 #endif // !ESPECIALIDAD_H
