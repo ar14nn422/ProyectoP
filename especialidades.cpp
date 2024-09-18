@@ -21,9 +21,11 @@ bool especialidades::agregarEspecialidad(especialidad* especialidad) {
 	return true;
 }
 string especialidades::mostrarEspecialidades() {
+	stringstream s;
 	for (int i = 0;i < cantidadEspecialidades;i++) {
-		return nombreEspecialidad[i]->getNombreEsp();
+		s<<nombreEspecialidad[i]->getNombreEsp();
 	}
+	return s.str();
 }
 especialidades::~especialidades() {
 	for (int i = 0;i < tamanoEspecialidades;i++) {
