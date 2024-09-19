@@ -134,6 +134,8 @@
     <ClCompile Include="Doctor.cpp" />
     <ClCompile Include="Dueño.cpp" />
     <ClCompile Include="especialidad.cpp" />
+    <ClCompile Include="especialidades.cpp" />
+    
     <ClCompile Include="horas.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mascota.cpp" />
@@ -147,6 +149,7 @@
     <ClInclude Include="Doctor.h" />
     <ClInclude Include="Dueño.h" />
     <ClInclude Include="especialidad.h" />
+    <ClCompile Include="especialidades.h" />
     <ClInclude Include="horas.h" />
     <ClInclude Include="mascota.h" />
     <ClInclude Include="menuprincipal.h" />
