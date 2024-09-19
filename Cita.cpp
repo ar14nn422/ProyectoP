@@ -2,12 +2,12 @@
 
 Cita::Cita(int hora, string dia, bool estado, especialidad* doctor, ColeccionDueños* duenno, coleccionmascotas* paciente)
 {
-	hora = hora;
-	dia = dia;
-	estado = estado;
-	doctor = doctor;
-	duenno = duenno;
-	paciente = paciente;
+	this->hora = hora;
+	this->dia = dia;
+	this->estado = estado;
+	this->doctor = doctor;
+	this->duenno = duenno;
+	this->paciente = paciente;
 }
 
 Cita::Cita()
@@ -67,23 +67,17 @@ coleccionmascotas* Cita::getPaciente()
 
 void Cita::setDoctor(especialidad* doctor)
 {
-	if (doctor == nullptr) {
-		doctor = new especialidad(*doctor);
-	}
+	this->doctor = doctor;
 }
 
 void Cita::setDuenno(ColeccionDueños* duenno)
 {
-	if (duenno == nullptr) {
-		duenno = new ColeccionDueños(*duenno);
-	}
+	this->duenno = duenno;
 }
 
 void Cita::setPaciente(coleccionmascotas* paciente)
 {
-	if (paciente == nullptr) {
-		paciente = new coleccionmascotas(*paciente);
-	}
+	this->paciente = paciente;
 }
 
 void Cita::reactivarCita()

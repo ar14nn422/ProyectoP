@@ -6,4 +6,5 @@ int main() {
 	c1.~menuprincipal();
 	cin.get();
 	cin.get();
+	return 0;
 }
