@@ -1,17 +1,15 @@
 #ifndef MENUPRINCIPAL_H
 #define MENUPRINCIPAL_H
-#include"especialidades.h"
-#include"especialidad.h"
+#include"coleccionespecialidades.h"
 #include"Doctor.h"
 using namespace std;
 class menuprincipal {
 private:
-	especialidades* esps;
+	coleccionespecialidades* e;
 public:
 	menuprincipal();
 	void menu();
 	void opcionUno();
-	void adminOpUno();
 	void opcionDos();
 	void opcionTres();
 	~menuprincipal();

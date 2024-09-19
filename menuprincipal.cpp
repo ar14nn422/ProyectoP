@@ -1,7 +1,7 @@
 #include"menuprincipal.h"
 
 menuprincipal::menuprincipal() {
-	esps = new especialidades;
+	e = new coleccionespecialidades();
 }
 void menuprincipal::menu() {
 	int respuesta;
@@ -58,9 +58,12 @@ void menuprincipal::opcionUno() {
 	cin >> respuesta;
 	switch (respuesta) {
 	case 1:
+		system("cls");
+		e->adminOpUno();
 		break;	
 	case 2:
 		system("cls");
+		e->adminOpDos();
 		break;
 	case 3:
 		system("cls");
@@ -77,9 +80,6 @@ void menuprincipal::opcionUno() {
 		opcionUno();
 		break;
 	}
-}
-void menuprincipal::adminOpUno() {
-
 }
 void menuprincipal::opcionDos() {
 	int respuesta;
@@ -148,5 +148,6 @@ void menuprincipal::opcionTres() {
 		break;
 	}
 }
+
 menuprincipal::~menuprincipal() {
 }
