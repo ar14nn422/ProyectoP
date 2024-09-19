@@ -1,7 +1,8 @@
 #include"menuprincipal.h"
 
 menuprincipal::menuprincipal() {
-	esps = new especialidades;
+	especial = new especialidad * [7];
+	cantEspe = 0;
 }
 void menuprincipal::menu() {
 	int respuesta;
@@ -58,9 +59,12 @@ void menuprincipal::opcionUno() {
 	cin >> respuesta;
 	switch (respuesta) {
 	case 1:
+		system("cls");
+		submAdmin1();
 		break;	
 	case 2:
 		system("cls");
+		submAdmin2();
 		break;
 	case 3:
 		system("cls");
@@ -78,7 +82,33 @@ void menuprincipal::opcionUno() {
 		break;
 	}
 }
-void menuprincipal::adminOpUno() {
+void menuprincipal::submAdmin1() {
+	string nomEspe;
+	cout << "Favor ingrese el nombre de la especialidad" << endl;
+	cin >> nomEspe;
+	especial[cantEspe]->setNombre(nomEspe);
+	cantEspe++;
+}
+void menuprincipal::submAdmin2() {
+	string respUsuar;
+	string nombDoc;
+	cout << "En cual especialidad le gustaria registrar al doctor?" << endl;
+	cin >> respUsuar;
+	for (int i = 0;i < 7;i++) {
+		if (respUsuar == especial[i]->getNombre()) {
+			cout << "Favor ingrese el nombre del doctor" << endl;
+			cin >> nombDoc;
+			especial[i]->agregarDoctor(nombDoc);
+		}
+		else {
+			cout << "No se tiene esa especialidad registrada, favor registrar especialidad" << endl;
+		}
+	}
+}
+void menuprincipal::submAdmin3() {
+
+}
+void menuprincipal::submAdmin4() {
 
 }
 void menuprincipal::opcionDos() {
@@ -149,4 +179,8 @@ void menuprincipal::opcionTres() {
 	}
 }
 menuprincipal::~menuprincipal() {
+	for (int i = 0;i < 7;i++) {
+		delete especial[i];
+	}
+	delete[] especial;
 }
