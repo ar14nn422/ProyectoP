@@ -135,7 +135,6 @@
     <ClCompile Include="Dueño.cpp" />
     <ClCompile Include="especialidad.cpp" />
     <ClCompile Include="especialidades.cpp" />
-    
     <ClCompile Include="horas.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mascota.cpp" />
