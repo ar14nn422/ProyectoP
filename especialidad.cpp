@@ -1,20 +1,19 @@
-#include"especialidad.h"
+#include "especialidad.h"
 
 especialidad::especialidad(string nombre) {
+	tamDoctores = 10;
+	cantidadDoctores = 0;
 	nombreEspecialidad = nombre;
-	cantDoc = 0;
-	doc = new doctor * [10];
+	doc = new doctor * [tamDoctores];
+	for (int i = 0;i < tamDoctores;i++) {
+		doc[i] = NULL;
+	}
 }
-void especialidad::setNombre(string nombre) {
+void especialidad::setNombreEsp(string nombre) {
 	nombreEspecialidad = nombre;
+
 }
-string especialidad::getNombre() {
+string especialidad::getNombreEsp() {
 	return nombreEspecialidad;
 }
-void especialidad::agregarDoctor(string nombDoc) {
-	doc[cantDoc] = new doctor(nombDoc);
-	cantDoc++;
-}
-especialidad::~especialidad() {
-	
-}
+

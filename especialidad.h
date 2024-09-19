@@ -1,17 +1,19 @@
 #ifndef ESPECIALIDAD_H
 #define ESPECIALIDAD_H
-#include "Doctor.h"
+#include"doctor.h"
+using namespace std;
 
 class especialidad {
 private:
+	int tamDoctores;
+	int cantidadDoctores;
 	string nombreEspecialidad;
 	doctor** doc;
-	int cantDoc;
 public:
 	especialidad(string);
+	void setNombreEsp(string);
+	string getNombreEsp();
+	string toStringEspecialidad();
 	~especialidad();
-	void agregarDoctor(string);
-	void setNombre(string);
-	string getNombre();
 };
-#endif
+#endif // !ESPECIALIDAD_H
