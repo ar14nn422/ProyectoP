@@ -1,4 +1,6 @@
-﻿#include "Dueño.h"
+﻿#ifndef COLECCIONDUEÑOS_H
+#define COLECCIONDUEÑOS_H
+#include "Dueño.h"
 class ColeccionDueños {
 private:
 	int tam;
@@ -15,3 +17,5 @@ public:
 	string mostrarDueños();
 
 };
+#endif // !COLECCIONDUEÑOS_H
+

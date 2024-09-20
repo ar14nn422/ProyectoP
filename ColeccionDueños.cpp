@@ -20,27 +20,28 @@ ColeccionDueños::~ColeccionDueños()
 
 void ColeccionDueños::setTam()
 {
-
+	tam = tam;
 }
 
 void ColeccionDueños::setCant()
 {
+	cant = cant;
 }
 
 int ColeccionDueños::getTam()
 {
-	return 0;
+	return tam;
 }
 
 int ColeccionDueños::getCant()
 {
-	return 0;
+	return cant;
 }
 
-void ColeccionDueños::ingresarDuennos(Dueño* nuevodue�o)
+void ColeccionDueños::ingresarDuennos(Dueño* nuevodueno)
 {
 	if (cant < tam) {
-		duenno[cant] = nuevodue�o;
+		duenno[cant] = nuevodueno;
 		cant++;
 	}
 }
@@ -49,6 +50,7 @@ string ColeccionDueños::mostrarDueños()
 {
 	stringstream s;
 	for (int i = 0; i < cant; i++) {
+		s <<"Duenno:"<< duenno[i]->getNombreDuenno() << "   "<<"Id:"<< duenno[i]->getId() << endl;
 		s << duenno[i]->mostrarMasc_d() << endl;
 	}
 

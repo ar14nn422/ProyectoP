@@ -2,12 +2,12 @@
 Dueño::Dueño() {
 	NombreDuenno = " ";
 	id = " ";
-	mascotas = nullptr;
+	mascotas = new coleccionmascotas(0);
 }
 Dueño::Dueño(string nombred, string id ,coleccionmascotas* mascotas) {
 	NombreDuenno = nombred;
 	id = id;
-	mascotas = mascotas;
+	this->mascotas = mascotas;
 }
 void Dueño::setNombreDuenno(string nombred)
 {
@@ -20,7 +20,7 @@ void Dueño::setId(string id) {
 
 void Dueño::setColeccionmascotas(coleccionmascotas* mascotas)
 {
-	mascotas = mascotas;
+	this->mascotas = mascotas;
 }
 
 string Dueño::getNombreDuenno()
