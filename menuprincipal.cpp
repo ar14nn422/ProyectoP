@@ -1,8 +1,9 @@
 #include"menuprincipal.h"
 
 menuprincipal::menuprincipal() {
-	e = new coleccionespecialidades;
-	
+	esp = new coleccionespecialidades();
+	duennos = new ColeccionDueños(0);
+	citas = new Agenda(0);
 }
 void menuprincipal::menu() {
 	int respuesta;
@@ -66,14 +67,14 @@ void menuprincipal::opcionUno() {
 		cin.get();
 		cout << "Favor ingrese el nombre de la especialidad" << endl;
 		getline(cin, nombEsp);
-		if (e->adminOpUno(nombEsp) != true) {
+		if (esp->adminOpUno(nombEsp) != true) {
 			cout << "No se pueden registrar mas especialidades" << endl;
 		}
 		break;	
 	case 2:
 		system("cls");
 		cout << "Favor seleccione la especialidad en la que desea registrar al doctor" << endl;
-		cout << e->toStringEspc();
+		cout << esp->toStringEspc();
 		cin >> opUsuar;
 		system("cls");
 		cin.get();
@@ -81,7 +82,7 @@ void menuprincipal::opcionUno() {
 		getline(cin, nomDoc);
 		cin.get();
 		system("cls");
-		if (e->adminOpDos(opUsuar,nomDoc) == true) {
+		if (esp->adminOpDos(opUsuar,nomDoc) == true) {
 			cout << "Se ha registrado el doctor" << endl;
 		}
 		else {
@@ -151,7 +152,7 @@ void menuprincipal::opcionTres() {
 	switch (respuesta) {
 	case 1:
 		system("cls");
-		e->toStringEspc();
+		esp->toStringEspc();
 		break;
 	case 2:
 		system("cls");
