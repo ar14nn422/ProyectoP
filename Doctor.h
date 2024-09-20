@@ -3,7 +3,7 @@
 #include "mascota.h"
 #include "horas.h"
 using namespace std;
-class doctor {
+class Doctor {
 private:
 	string nombre;
 	mascota** masc;
@@ -17,7 +17,7 @@ private:
 	int cant;
 	int hora;
 public:
-	doctor(string);
+	Doctor(string);
 	void generarHorario();
 	void llamarLunes();
 	void llamarMartes();
@@ -29,6 +29,6 @@ public:
 	void borrarPaciente();
 	string getPacientes();
 	string getNombreDoc();
-	~doctor();
+	~Doctor();
 };
 #endif // 

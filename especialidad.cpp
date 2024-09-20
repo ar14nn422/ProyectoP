@@ -3,14 +3,14 @@
 especialidad::especialidad(string nomb) {
 	nombre = nomb;
 	cantDoc = 0;
-	doc = new doctor * [10];
+	doc = new Doctor * [10];
 	for (int i = 0;i < 10;i++) {
-		doc[i] = new doctor(" ");
+		doc[i] = new Doctor(" ");
 	}
 }
 void especialidad::agregarDoc(string nombre) {
 	if (cantDoc < 10) {
-		doc[cantDoc] = new doctor(nombre);
+		doc[cantDoc] = new Doctor(nombre);
 		cout << "Se agrego un doctor" << endl;
 	}
 	else {

@@ -1,6 +1,6 @@
 #include "doctor.h"
 
-doctor::doctor(string nomb) {
+Doctor::Doctor(string nomb) {
 	nombre = nomb;
 	tam = 60;
 	cant = 0;
@@ -13,7 +13,7 @@ doctor::doctor(string nomb) {
 	viernes = new horas * [hora];
 	sabado = new horas * [hora];
 }
-void doctor::generarHorario() {
+void Doctor::generarHorario() {
 	int respuesta;
 	cout << "Favor ingrese el numero correspondiente al dia que desea hacer el registro" << endl;
 	cout << "1-Lunes" << endl;
@@ -48,7 +48,7 @@ void doctor::generarHorario() {
 		break;
 	}
 }
-void doctor::llamarLunes() {
+void Doctor::llamarLunes() {
 	int lunr;
 	char usurl;
 	lunes = new horas * [hora];
@@ -80,7 +80,7 @@ void doctor::llamarLunes() {
 	} while (usurl == 's');
 
 }
-void doctor::llamarMartes() {
+void Doctor::llamarMartes() {
 	int marr;
 	char usurm;
 	martes = new horas * [hora];
@@ -111,7 +111,7 @@ void doctor::llamarMartes() {
 		cin >> usurm;
 	} while (usurm == 's');
 }
-void doctor::llamarMiercoles() {
+void Doctor::llamarMiercoles() {
 	int mierr;
 	char usurmc;
 	miercoles = new horas * [hora];
@@ -142,7 +142,7 @@ void doctor::llamarMiercoles() {
 		cin >> usurmc;
 	} while (usurmc == 's');
 }
-void doctor::llamarJueves() {
+void Doctor::llamarJueves() {
 	int juevr;
 	char usurj;
 	jueves = new horas * [hora];
@@ -173,7 +173,7 @@ void doctor::llamarJueves() {
 		cin >> usurj;
 	} while (usurj == 's');
 }
-void doctor::llamarViernes() {
+void Doctor::llamarViernes() {
 	int vierr;
 	char usurv;
 	viernes = new horas * [hora];
@@ -204,7 +204,7 @@ void doctor::llamarViernes() {
 		cin >> usurv;
 	} while (usurv == 's');
 }
-void doctor::llamarSabado() {
+void Doctor::llamarSabado() {
 	int sabr;
 	char usurs;
 	sabado = new horas * [hora];
@@ -235,12 +235,12 @@ void doctor::llamarSabado() {
 		cin >> usurs;
 	} while (usurs == 's');
 }
-void doctor::agregarPaciente(mascota* paciente) {
+void Doctor::agregarPaciente(mascota* paciente) {
 	if (cant < tam) {
 		masc[cant] = paciente;
 	}
 }
-void doctor::borrarPaciente() {
+void Doctor::borrarPaciente() {
 	int tipo;
 	cout << "Que mascota desea eliminar" << endl;
 	cin >> tipo;
@@ -252,16 +252,16 @@ void doctor::borrarPaciente() {
 		}
 	}
 }
-string doctor::getPacientes() {
+string Doctor::getPacientes() {
 	stringstream s;
 	for (int i = 0;i < tam;i++)
 		s << masc[i]->mostrarMascota();
 		return s.str();
 	}
-string doctor::getNombreDoc() {
+string Doctor::getNombreDoc() {
 	return nombre;
 }
-doctor::~doctor() {
+Doctor::~Doctor() {
 	for (int i = 0; i < tam;i++) {
 		delete masc[i];
 		delete lunes[i];

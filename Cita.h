@@ -1,16 +1,18 @@
 ﻿#include "ColeccionDueños.h"
 #include "coleccionmascotas.h"
 #include "especialidad.h"
+#include "Doctor.h"
 class Cita {
 private:
 	int hora;
 	string dia;
 	bool estado;
-	especialidad* doctor;
-	ColeccionDueños* duenno;
-	coleccionmascotas* paciente;
+	especialidad* espe;
+	Doctor* doctor;
+	Dueño* duenno;
+	mascota* paciente;
 public:
-	Cita(int, string, bool, especialidad*, ColeccionDueños*, coleccionmascotas*);
+	Cita(int, string, bool, especialidad*,Doctor*, Dueño*, mascota*);
 	Cita();
 	int getHora();
 	string getDia();
@@ -18,12 +20,14 @@ public:
 	void setDia(string);
 	void setEstado(bool);
 	bool getEstado();
-	especialidad* getDoctor();
-	ColeccionDueños* getDuenno();
-	coleccionmascotas* getPaciente();
-	void setDoctor(especialidad*);
-	void setDuenno(ColeccionDueños*);
-	void setPaciente(coleccionmascotas*);
+	Doctor* getDoctor();
+	Dueño* getDuenno();
+	mascota* getPaciente();
+	especialidad* getEspecialidad();
+	void setDoctor(Doctor*);
+	void setDuenno(Dueño*);
+	void setPaciente(mascota*);
+	void setEspecialidad(especialidad*);
 	void reactivarCita();
 	string ImprimirCita();
 

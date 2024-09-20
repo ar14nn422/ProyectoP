@@ -1,10 +1,11 @@
 ﻿#include "Cita.h"
 
-Cita::Cita(int hora, string dia, bool estado, especialidad* doctor, ColeccionDueños* duenno, coleccionmascotas* paciente)
+Cita::Cita(int hora, string dia, bool estado, especialidad* espe,Doctor* doctor, Dueño* duenno, mascota* paciente)
 {
 	this->hora = hora;
 	this->dia = dia;
 	this->estado = estado;
+	this->espe = espe;
 	this->doctor = doctor;
 	this->duenno = duenno;
 	this->paciente = paciente;
@@ -15,6 +16,7 @@ Cita::Cita()
 	hora = 0;
 	dia = " ";
 	estado = false;
+	espe = nullptr;
 	doctor = nullptr;
 	duenno = nullptr;
 	paciente = nullptr;
@@ -50,34 +52,44 @@ bool Cita::getEstado()
 	return false;
 }
 
-especialidad* Cita::getDoctor()
+Doctor* Cita::getDoctor()
 {
 	return doctor;
 }
 
-ColeccionDueños* Cita::getDuenno()
+Dueño* Cita::getDuenno()
 {
 	return duenno;
 }
 
-coleccionmascotas* Cita::getPaciente()
+mascota* Cita::getPaciente()
 {
 	return paciente;
 }
 
-void Cita::setDoctor(especialidad* doctor)
+especialidad* Cita::getEspecialidad()
+{
+	return espe;
+}
+
+void Cita::setDoctor(Doctor* doctor)
 {
 	this->doctor = doctor;
 }
 
-void Cita::setDuenno(ColeccionDueños* duenno)
+void Cita::setDuenno(Dueño* duenno)
 {
 	this->duenno = duenno;
 }
 
-void Cita::setPaciente(coleccionmascotas* paciente)
+void Cita::setPaciente(mascota* paciente)
 {
 	this->paciente = paciente;
+}
+
+void Cita::setEspecialidad(especialidad* espe)
+{
+	this->espe = espe;
 }
 
 void Cita::reactivarCita()
