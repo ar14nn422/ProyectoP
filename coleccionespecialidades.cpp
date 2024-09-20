@@ -7,30 +7,15 @@ coleccionespecialidades::coleccionespecialidades() {
 		especial[i] = new especialidad(" ");
 	}
 }
-void coleccionespecialidades::adminOpUno() {
-	string nombEsp;
-	cout << "Favor ingrese el nombre de la especialidad" << endl;
-	getline(cin, nombEsp);
+bool coleccionespecialidades::adminOpUno(string nombEsp) {
 	if (cantEsp < 7) {
 		especial[cantEsp] = new especialidad(nombEsp);
 		cantEsp++;
 		system("cls");
-	}
-	else {
-		cout << "No es posible agregar mas especialidades" << endl;
-		system("cls");
+		return true;
 	}
 }
-void coleccionespecialidades::adminOpDos() {
-	int opUsuar;
-	string nomDoc;
-	cout << "Favor seleccione la especialidad en la que desea registrar al doctor" << endl;
-	cout << toStringEspc();
-	cin >> opUsuar;
-	system("cls");
-	cin.get();
-	cout << "Favor ingrese el nombre del doctor" << endl;
-	getline(cin, nomDoc);
+void coleccionespecialidades::adminOpDos(int opUsuar,string nomDoc) {
 	especial[opUsuar]->agregarDoc(nomDoc);
 	system("cls");
 }

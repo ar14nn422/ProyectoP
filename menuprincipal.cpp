@@ -49,7 +49,9 @@ void menuprincipal::menu() {
 }
 void menuprincipal::opcionUno() {
 	int respuesta;
-	string nombreEsp;
+	string nombEsp;
+	int opUsuar;
+	string nomDoc;
 	cout << "Submenu de administracion" << endl << endl;
 	cout << "1-Ingresar especialidades" << endl;
 	cout << "2-Ingresar Doctor (Por especialidad)" << endl;
@@ -60,14 +62,26 @@ void menuprincipal::opcionUno() {
 	cin >> respuesta;
 	switch (respuesta) {
 	case 1:
-		cin.get();
 		system("cls");
-		e->adminOpUno();
+		cin.get();
+		cout << "Favor ingrese el nombre de la especialidad" << endl;
+		getline(cin, nombEsp);
+		if (e->adminOpUno(nombEsp) != true) {
+			cout << "No se pueden registrar mas especialidades" << endl;
+		}
 		break;	
 	case 2:
+		system("cls");
+		cout << "Favor seleccione la especialidad en la que desea registrar al doctor" << endl;
+		cout << e->toStringEspc();
+		cin >> opUsuar;
+		system("cls");
+		cin.get();
+		cout << "Favor ingrese el nombre del doctor" << endl;
+		getline(cin, nomDoc);
 		cin.get();
 		system("cls");
-		e->adminOpDos();
+		e->adminOpDos(opUsuar,nomDoc);
 		break;
 	case 3:
 		system("cls");
@@ -132,6 +146,7 @@ void menuprincipal::opcionTres() {
 	switch (respuesta) {
 	case 1:
 		system("cls");
+		e->toStringEspc();
 		break;
 	case 2:
 		system("cls");

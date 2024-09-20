@@ -8,8 +8,8 @@ private:
 	int cantEsp;
 public:
 	coleccionespecialidades();
-	void adminOpUno();
-	void adminOpDos();
+	bool adminOpUno(string);
+	void adminOpDos(int, string);
 	void adminOpTres();
 	void adminOpCuat();
 	string toStringEspc();
