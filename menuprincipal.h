@@ -1,11 +1,15 @@
 #ifndef MENUPRINCIPAL_H
 #define MENUPRINCIPAL_H
 #include"coleccionespecialidades.h"
-#include"Doctor.h"
+#include "ColeccionDueños.h"
+#include "Agenda.h"
 using namespace std;
 class menuprincipal {
 private:
-	coleccionespecialidades* e;
+	coleccionespecialidades* esp;
+	ColeccionDueños* duennos;
+	Agenda* citas;
+
 public:
 	menuprincipal();
 	void menu();

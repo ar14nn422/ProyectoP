@@ -43,6 +43,19 @@ void coleccionmascotas::agregarMascota(mascota* nMascota)
 		mascotas[cant] = nMascota;
 		cant++;
 	}
+	else {
+		if (cant >= tam) {
+			tam *= 2;
+			mascota** mascotass = new mascota * [tam];
+			for (int i = 0; i < cant; ++i) {
+				mascotass[i] = mascotas[i];
+			}
+			delete[] mascotas;
+			mascotas = mascotass;
+		}
+		mascotas[cant] = nMascota;
+		cant++;
+	}
 }
 
 
