@@ -44,3 +44,9 @@ string coleccionespecialidades::toStringEspc() {
 	}
 	return s.str();
 }
+coleccionespecialidades::~coleccionespecialidades() {
+	for (int i = 0;i < 7;i++) {
+		delete especial[i];
+	}
+	delete[] especial;
+}
