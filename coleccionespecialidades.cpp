@@ -13,6 +13,7 @@ void coleccionespecialidades::adminOpUno() {
 	getline(cin, nombEsp);
 	if (cantEsp < 7) {
 		especial[cantEsp] = new especialidad(nombEsp);
+		cantEsp++;
 		system("cls");
 	}
 	else {
@@ -26,6 +27,8 @@ void coleccionespecialidades::adminOpDos() {
 	cout << "Favor seleccione la especialidad en la que desea registrar al doctor" << endl;
 	cout << toStringEspc();
 	cin >> opUsuar;
+	system("cls");
+	cin.get();
 	cout << "Favor ingrese el nombre del doctor" << endl;
 	getline(cin, nomDoc);
 	especial[opUsuar]->agregarDoc(nomDoc);

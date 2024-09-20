@@ -38,6 +38,7 @@ void menuprincipal::menu() {
 			system("cls");
 			break;
 		default:
+			system("cls");
 			cout << "Desea realizar alguna otra funcion?(s/n)" << endl;
 			cin >> respuestaFinal;
 			system("cls");
