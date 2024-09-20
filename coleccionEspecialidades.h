@@ -9,7 +9,7 @@ private:
 public:
 	coleccionespecialidades();
 	bool adminOpUno(string);
-	void adminOpDos(int, string);
+	bool adminOpDos(int, string);
 	void adminOpTres();
 	void adminOpCuat();
 	string toStringEspc();

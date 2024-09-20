@@ -15,9 +15,13 @@ bool coleccionespecialidades::adminOpUno(string nombEsp) {
 		return true;
 	}
 }
-void coleccionespecialidades::adminOpDos(int opUsuar,string nomDoc) {
-	especial[opUsuar]->agregarDoc(nomDoc);
-	system("cls");
+bool coleccionespecialidades::adminOpDos(int opUsuar,string nomDoc) {
+	if (opUsuar < 7) {
+		especial[opUsuar]->agregarDoc(nomDoc);
+		system("cls");
+		return true;
+	}
+
 }
 void coleccionespecialidades::adminOpTres() {
 
