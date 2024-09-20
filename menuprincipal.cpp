@@ -82,7 +82,12 @@ void menuprincipal::opcionUno() {
 		getline(cin, nomDoc);
 		cin.get();
 		system("cls");
-		e->adminOpDos(opUsuar,nomDoc);
+		if (esp->adminOpDos(opUsuar, nomDoc)==true) {
+			cout << "Se ha registrado un doctor" << endl;
+		}
+		else {
+			cout << "No se ha registrado el doctor, revisar la especialidad asignada" << endl;
+		}
 		break;
 	case 3:
 		system("cls");
