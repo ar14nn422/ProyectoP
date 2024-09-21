@@ -141,6 +141,7 @@ void menuprincipal::opcionDos() {
 }
 void menuprincipal::opcionTres() {
 	int respuesta;
+	int verDoc;
 	cout << "Submenu para Busquedas y listados" << endl << endl;
 	cout << "1-Mostrar Listados de Especialidades" << endl;
 	cout << "2-Mostrar Listado de Doctores por Especialidad" << endl;
@@ -152,10 +153,16 @@ void menuprincipal::opcionTres() {
 	switch (respuesta) {
 	case 1:
 		system("cls");
-		esp->toStringEspc();
+		cout<<esp->toStringEspc();
 		break;
 	case 2:
 		system("cls");
+		cout << "Favor seleccione el numero asociado a la especialidad de la que desea ver los doctores" << endl;
+		cout<<esp->toStringEspc();
+		cin >> verDoc;
+		cin.get();
+		cout<<esp->toStringDocs(verDoc);
+	
 		break;
 	case 3:
 		system("cls");

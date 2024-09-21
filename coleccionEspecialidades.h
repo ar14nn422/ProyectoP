@@ -13,6 +13,7 @@ public:
 	void adminOpTres();
 	void adminOpCuat();
 	string toStringEspc();
+	string toStringDocs(int);
 	~coleccionespecialidades();
 };
 #endif // !COLECCIONESPECIALIDADES_H

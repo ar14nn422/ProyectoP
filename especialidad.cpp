@@ -21,6 +21,12 @@ void especialidad::agregarDoc(string nombre) {
 string especialidad::getNombre() {
 	return nombre;
 }
+string especialidad::getDoctor() {
+	for (int i = 0;i < 10;i++) {
+		return doc[i]->getNombreDoc();
+	}
+	
+}
 especialidad::~especialidad() {
 
 }
