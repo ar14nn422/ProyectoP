@@ -17,16 +17,10 @@ bool coleccionespecialidades::adminOpUno(string nombEsp) {
 }
 bool coleccionespecialidades::adminOpDos(int opUsuar,string nomDoc) {
 	if (opUsuar < 7) {
-		especial[opUsuar]->agregarDoc(nomDoc);
-		system("cls");
-		return true;
+		if (especial[opUsuar]->agregarDoc(nomDoc)==true) {
+			return true;
+		}
 	}
-
-}
-void coleccionespecialidades::adminOpTres() {
-
-}
-void coleccionespecialidades::adminOpCuat() {
 
 }
 string coleccionespecialidades::toStringEspc() {

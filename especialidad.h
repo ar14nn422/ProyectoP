@@ -10,7 +10,7 @@ private:
 	Doctor** doc;
 public:
 	especialidad(string);
-	void agregarDoc(string);
+	bool agregarDoc(string);
 	string getNombre();
 	string getDoctor();
 	~especialidad();

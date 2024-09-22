@@ -10,8 +10,6 @@ public:
 	coleccionespecialidades();
 	bool adminOpUno(string);
 	bool adminOpDos(int, string);
-	void adminOpTres();
-	void adminOpCuat();
 	string toStringEspc();
 	string toStringDocs(int);
 	~coleccionespecialidades();
