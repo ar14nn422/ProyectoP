@@ -2,7 +2,7 @@
 
 menuprincipal::menuprincipal() {
 	esp = new coleccionespecialidades();
-	duennos = new ColeccionDueños(0);
+	duennos = new ColeccionDueños(20);
 	citas = new Agenda(0);
 }
 void menuprincipal::menu() {
@@ -53,6 +53,8 @@ void menuprincipal::opcionUno() {
 	string nombEsp;
 	int opUsuar;
 	string nomDoc;
+	string duenoId;
+	string duennoNomb;
 	cout << "Submenu de administracion" << endl << endl;
 	cout << "1-Ingresar especialidades" << endl;
 	cout << "2-Ingresar Doctor (Por especialidad)" << endl;
@@ -91,6 +93,11 @@ void menuprincipal::opcionUno() {
 		break;
 	case 3:
 		system("cls");
+		cout << "Favor ingrese el nombre del duenno" << endl;
+		cin >> duennoNomb;
+		cout << "Favor ingrese el id del duenno" << endl;
+		cin >> duenoId;
+		duennos->ingresarDuennos(duennoNomb, duenoId);
 		break;
 	case 4:
 		system("cls");

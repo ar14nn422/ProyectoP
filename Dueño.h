@@ -2,14 +2,14 @@
 #include "coleccionmascotas.h"
 #ifndef DUEÑO_H
 #define DUEÑO_H
-class Dueño {
+class Duenno {
 private:
 	string NombreDuenno;
 	string id;
 	coleccionmascotas* mascotas;
 public:
-	Dueño();
-	Dueño(string, string, coleccionmascotas*);
+	Duenno();
+	Duenno(string, string);
 	void setNombreDuenno(string);
 	void setId(string);
 	void setColeccionmascotas(coleccionmascotas*);

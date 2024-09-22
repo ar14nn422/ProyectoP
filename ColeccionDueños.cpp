@@ -4,9 +4,9 @@ ColeccionDueños::ColeccionDueños(int n)
 {
 	tam = n;
 	cant = 0;
-	duenno = new Dueño * [n];
+	duenno = new Duenno * [n];
 	for (int i = 0; i < tam; i++) {
-		duenno[i] = new Dueño();
+		duenno[i] = new Duenno();
 	}
 }
 
@@ -38,10 +38,10 @@ int ColeccionDueños::getCant()
 	return cant;
 }
 
-void ColeccionDueños::ingresarDuennos(Dueño* nuevodueno)
+void ColeccionDueños::ingresarDuennos(string nombre, string id)
 {
 	if (cant < tam) {
-		duenno[cant] = nuevodueno;
+		duenno[cant] = new Duenno(nombre, id);
 		cant++;
 	}
 }

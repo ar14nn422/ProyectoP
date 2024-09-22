@@ -5,7 +5,7 @@ class ColeccionDueños {
 private:
 	int tam;
 	int cant;
-	Dueño** duenno;
+	Duenno** duenno;
 public:
 	ColeccionDueños(int);
 	~ColeccionDueños();
@@ -13,7 +13,7 @@ public:
 	void setCant();
 	int getTam();
 	int getCant();
-	void ingresarDuennos(Dueño*);
+	void ingresarDuennos(string, string);
 	string mostrarDueños();
 
 };

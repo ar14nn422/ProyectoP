@@ -1,50 +1,50 @@
 #include "Dueño.h"
-Dueño::Dueño() {
+Duenno::Duenno() {
 	NombreDuenno = " ";
 	id = " ";
 	mascotas = new coleccionmascotas(0);
 }
-Dueño::Dueño(string nombred, string id ,coleccionmascotas* mascotas) {
+Duenno::Duenno(string nombred, string id) {
 	NombreDuenno = nombred;
 	id = id;
 	this->mascotas = mascotas;
 }
-void Dueño::setNombreDuenno(string nombred)
+void Duenno::setNombreDuenno(string nombred)
 {
 	NombreDuenno = nombred;
 }
 
-void Dueño::setId(string id) {
+void Duenno::setId(string id) {
 	id = id;
 }
 
-void Dueño::setColeccionmascotas(coleccionmascotas* mascotas)
+void Duenno::setColeccionmascotas(coleccionmascotas* mascotas)
 {
 	this->mascotas = mascotas;
 }
 
-string Dueño::getNombreDuenno()
+string Duenno::getNombreDuenno()
 {
 	return NombreDuenno;
 }
 
-string Dueño::getId()
+string Duenno::getId()
 {
 	return id;
 }
 
-coleccionmascotas* Dueño::getMascotas()
+coleccionmascotas* Duenno::getMascotas()
 {
 	return mascotas;
 }
 
-void Dueño::asignarMascotas(mascota* nuevaMascota)
+void Duenno::asignarMascotas(mascota* nuevaMascota)
 {
 	mascotas->agregarMascota(nuevaMascota);
 }
 
 
-string Dueño::mostrarMasc_d()
+string Duenno::mostrarMasc_d()
 {
 	stringstream s;
 	s << "Dueño:" << NombreDuenno << endl;
