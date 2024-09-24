@@ -18,6 +18,7 @@ public:
 	void ingresarDuennos(string, string);
 	int getposIdDuenno(string);
 	void ingresarMascotas(string, string, string);
+	string mostrarMascotas(string);
 	string mostrarDueños();
 
 };

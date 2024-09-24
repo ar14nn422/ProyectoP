@@ -63,6 +63,15 @@ void ColeccionDueños::ingresarMascotas(string id, string nombreMas, string idMa
 		cant++;
 	}
 }
+string ColeccionDueños::mostrarMascotas(string nombduen) {
+	stringstream s;
+	for (int i = 0;i < cant;i++) {
+		if (duenno[i]->getNombreDuenno() == nombduen) {
+			s << duenno[i]->getMascotas() << endl;
+		}
+	}
+	return s.str();
+}
 
 string ColeccionDueños::mostrarDueños()
 {

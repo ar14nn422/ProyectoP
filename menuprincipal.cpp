@@ -158,6 +158,7 @@ void menuprincipal::opcionDos() {
 void menuprincipal::opcionTres() {
 	int respuesta;
 	int verDoc;
+	string nombreDuen;
 	cout << "Submenu para Busquedas y listados" << endl << endl;
 	cout << "1-Mostrar Listados de Especialidades" << endl;
 	cout << "2-Mostrar Listado de Doctores por Especialidad" << endl;
@@ -181,7 +182,10 @@ void menuprincipal::opcionTres() {
 		break;
 	case 3:
 		system("cls");
-
+		cout << "Favor ingrese su nombre" << endl;
+		cin >> nombreDuen;
+		cout << "A continuacion se le mostraran sus mascotas" << endl;
+		cout << duennos->mostrarMascotas(nombreDuen) << endl;
 		break;
 	case 4:
 		system("cls");
