@@ -1,12 +1,16 @@
 ﻿#include "ColeccionDueños.h"
 
-ColeccionDueños::ColeccionDueños(int n)
+ColeccionDueños::ColeccionDueños()
 {
-	tam = n;
+	tam = 54;
 	cant = 0;
-	duenno = new Duenno * [n];
+	duenno = new Duenno * [tam];
 	for (int i = 0; i < tam; i++) {
 		duenno[i] = new Duenno();
+	}
+	mascotas = new coleccionmascotas * [tam];
+	for (int i = 0;i < tam;i++) {
+		mascotas[i] = new coleccionmascotas(5);
 	}
 }
 
@@ -42,6 +46,20 @@ void ColeccionDueños::ingresarDuennos(string nombre, string id)
 {
 	if (cant < tam) {
 		duenno[cant] = new Duenno(nombre, id);
+		cant++;
+	}
+}
+int ColeccionDueños::getposIdDuenno(string idD) {
+	for (int i = 0;i < tam;i++) {
+		if (duenno[i]->getId() == idD) {
+			return i;
+		}
+	}
+}
+void ColeccionDueños::ingresarMascotas(string id, string nombreMas, string idMas) {
+	if (cant < tam) {
+		mascotas[getposIdDuenno(id)]= new coleccionmascotas(5);
+		mascotas[getposIdDuenno(id)]->agregarMascota(nombreMas, idMas);
 		cant++;
 	}
 }

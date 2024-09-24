@@ -2,7 +2,7 @@
 Duenno::Duenno() {
 	NombreDuenno = " ";
 	id = " ";
-	mascotas = new coleccionmascotas(0);
+	mascotas = new coleccionmascotas(5);
 }
 Duenno::Duenno(string nombred, string id) {
 	NombreDuenno = nombred;
@@ -38,9 +38,9 @@ coleccionmascotas* Duenno::getMascotas()
 	return mascotas;
 }
 
-void Duenno::asignarMascotas(mascota* nuevaMascota)
+void Duenno::asignarMascotas(string nomb, string id)
 {
-	mascotas->agregarMascota(nuevaMascota);
+	mascotas->agregarMascota(nomb,id);
 }
 
 

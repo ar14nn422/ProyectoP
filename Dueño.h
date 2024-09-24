@@ -16,7 +16,7 @@ public:
 	string getNombreDuenno();
 	string getId();
 	coleccionmascotas* getMascotas();
-	void asignarMascotas(mascota*);
+	void asignarMascotas(string, string);
 	string mostrarMasc_d();
 
 

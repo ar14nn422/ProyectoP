@@ -2,7 +2,7 @@
 
 menuprincipal::menuprincipal() {
 	esp = new coleccionespecialidades();
-	duennos = new ColeccionDueños(20);
+	duennos = new ColeccionDueños();
 	citas = new Agenda(0);
 }
 void menuprincipal::menu() {
@@ -55,6 +55,8 @@ void menuprincipal::opcionUno() {
 	string nomDoc;
 	string duenoId;
 	string duennoNomb;
+	string nombreMas;
+	string idMas;
 	cout << "Submenu de administracion" << endl << endl;
 	cout << "1-Ingresar especialidades" << endl;
 	cout << "2-Ingresar Doctor (Por especialidad)" << endl;
@@ -94,13 +96,20 @@ void menuprincipal::opcionUno() {
 	case 3:
 		system("cls");
 		cout << "Favor ingrese el nombre del duenno" << endl;
-		cin >> duennoNomb;
+		getline(cin, duennoNomb);
 		cout << "Favor ingrese el id del duenno" << endl;
 		cin >> duenoId;
 		duennos->ingresarDuennos(duennoNomb, duenoId);
 		break;
 	case 4:
 		system("cls");
+		cout << "Favor ingrese su id" << endl;
+		cin >> duenoId;
+		cout << "Favor ingrese el nombre de la mascota" << endl;
+		getline(cin, nombreMas);
+		cout << "Favor ingrese el id de la mascota" << endl;
+		getline(cin, idMas);
+		duennos->ingresarMascotas(duenoId,nombreMas,idMas);
 		break;
 	case 0:
 		system("cls");
@@ -169,10 +178,10 @@ void menuprincipal::opcionTres() {
 		cin >> verDoc;
 		cin.get();
 		cout<<esp->toStringDocs(verDoc);
-	
 		break;
 	case 3:
 		system("cls");
+
 		break;
 	case 4:
 		system("cls");

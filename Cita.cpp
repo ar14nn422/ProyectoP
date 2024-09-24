@@ -34,17 +34,17 @@ string Cita::getDia()
 
 void Cita::setHora(int hora)
 {
-	hora = hora;
+	this ->hora = hora;
 }
 
 void Cita::setDia(string dia)
 {
-	dia = dia;
+	this->dia = dia;
 }
 
 void Cita::setEstado(bool estado)
 {
-	estado = estado;
+	this->estado = estado;
 }
 
 bool Cita::getEstado()

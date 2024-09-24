@@ -1,19 +1,23 @@
 ﻿#ifndef COLECCIONDUEÑOS_H
 #define COLECCIONDUEÑOS_H
 #include "Dueño.h"
+#include "coleccionmascotas.h"
 class ColeccionDueños {
 private:
 	int tam;
 	int cant;
 	Duenno** duenno;
+	coleccionmascotas** mascotas;
 public:
-	ColeccionDueños(int);
+	ColeccionDueños();
 	~ColeccionDueños();
 	void setTam();
 	void setCant();
 	int getTam();
 	int getCant();
 	void ingresarDuennos(string, string);
+	int getposIdDuenno(string);
+	void ingresarMascotas(string, string, string);
 	string mostrarDueños();
 
 };
