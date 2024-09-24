@@ -1,6 +1,6 @@
 ﻿#include "Cita.h"
 
-Cita::Cita(int hora, string dia, bool estado, especialidad* espe,Doctor* doctor, Dueño* duenno, mascota* paciente)
+Cita::Cita(int hora, string dia, bool estado, especialidad* espe,Doctor* doctor, Duenno* duenno, mascota* paciente)
 {
 	this->hora = hora;
 	this->dia = dia;
@@ -57,7 +57,7 @@ Doctor* Cita::getDoctor()
 	return doctor;
 }
 
-Dueño* Cita::getDuenno()
+Duenno* Cita::getDuenno()
 {
 	return duenno;
 }
@@ -77,7 +77,7 @@ void Cita::setDoctor(Doctor* doctor)
 	this->doctor = doctor;
 }
 
-void Cita::setDuenno(Dueño* duenno)
+void Cita::setDuenno(Duenno* duenno)
 {
 	this->duenno = duenno;
 }

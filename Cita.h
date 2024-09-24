@@ -9,10 +9,10 @@ private:
 	bool estado;
 	especialidad* espe;
 	Doctor* doctor;
-	Dueño* duenno;
+	Duenno* duenno;
 	mascota* paciente;
 public:
-	Cita(int, string, bool, especialidad*,Doctor*, Dueño*, mascota*);
+	Cita(int, string, bool, especialidad*,Doctor*, Duenno*, mascota*);
 	Cita();
 	int getHora();
 	string getDia();
@@ -21,11 +21,11 @@ public:
 	void setEstado(bool);
 	bool getEstado();
 	Doctor* getDoctor();
-	Dueño* getDuenno();
+	Duenno* getDuenno();
 	mascota* getPaciente();
 	especialidad* getEspecialidad();
 	void setDoctor(Doctor*);
-	void setDuenno(Dueño*);
+	void setDuenno(Duenno*);
 	void setPaciente(mascota*);
 	void setEspecialidad(especialidad*);
 	void reactivarCita();
