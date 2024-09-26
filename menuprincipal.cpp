@@ -122,6 +122,12 @@ void menuprincipal::opcionUno() {
 }
 void menuprincipal::opcionDos() {
 	int respuesta;
+	int opcion;
+	string opc;
+	string idDuenno;
+	Duenno* dseleccionado = duennos->encontrarId(idDuenno);
+	mascota* mascotad = dseleccionado->seleccionar(opc);
+	//especialidad* espeSeleccionada = coleccionespecialidades->seleccionarEspecialidad();
 	cout << "Submenu de control de citas" << endl << endl;
 	cout << "1-Sacar Cita" << endl;
 	cout << "2-Cancelar Cita" << endl;
@@ -133,6 +139,18 @@ void menuprincipal::opcionDos() {
 	switch (respuesta) {
 	case 1:
 		system("cls");
+		cout << "Ingrese su id:"<< endl;
+		getline(cin, idDuenno);
+		cout<<dseleccionado->mostrarMasc_d()<<endl;
+		cout << "Ingrese el nombre de la mascota para la cual será la cita, debe ser igual a como se muestra en la lista:" << endl;
+		getline(cin, opc);
+		cout << "Ingrese la especialidad deseada:" << endl;
+		cout << esp->toStringEspc();
+		cin >> opcion;
+
+
+		
+		
 		break;
 	case 2:
 		system("cls");

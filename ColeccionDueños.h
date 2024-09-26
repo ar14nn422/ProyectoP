@@ -17,6 +17,7 @@ public:
 	int getCant();
 	void ingresarDuennos(string, string);
 	int getposIdDuenno(string);
+	Duenno* encontrarId(string);
 	void ingresarMascotas(string, string);
 	string mostrarMascotas(string);
 	string mostrarDueños();

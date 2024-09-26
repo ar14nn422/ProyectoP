@@ -43,6 +43,12 @@ void Duenno::asignarMascotas(string nomb)
 	mascotas->agregarMascota(nomb);
 }
 
+mascota* Duenno::seleccionar(string opn)
+{
+	
+	return mascotas->buscarporNombre(opn);
+}
+
 
 string Duenno::mostrarMasc_d()
 {

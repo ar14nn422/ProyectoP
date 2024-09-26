@@ -17,6 +17,7 @@ public:
 	string getId();
 	coleccionmascotas* getMascotas();
 	void asignarMascotas(string);
+	mascota* seleccionar(string);
 	string mostrarMasc_d();
 
 

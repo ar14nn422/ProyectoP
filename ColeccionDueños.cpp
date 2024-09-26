@@ -50,12 +50,24 @@ void ColeccionDueños::ingresarDuennos(string nombre, string id)
 	}
 }
 int ColeccionDueños::getposIdDuenno(string idD) {
-	for (int i = 0;i < tam;i++) {
+	for (int i = 0;i < cant;i++) {
 		if (duenno[i]->getId() == idD) {
 			return i;
 		}
 	}
 }
+
+Duenno* ColeccionDueños::encontrarId(string id)
+{
+	for (int i = 0; i < cant; i++) {
+		if (duenno[i]->getId() == id) {
+			return duenno[i];
+		}
+	}
+
+	return nullptr;
+}
+
 void ColeccionDueños::ingresarMascotas(string id, string nombreMas) {
 	if (cant < tam) {
 		mascotas[getposIdDuenno(id)]= new coleccionmascotas(5);
@@ -63,10 +75,10 @@ void ColeccionDueños::ingresarMascotas(string id, string nombreMas) {
 		cant++;
 	}
 }
-string ColeccionDueños::mostrarMascotas(string nombduen) {
+string ColeccionDueños::mostrarMascotas(string id) {
 	stringstream s;
 	for (int i = 0;i < cant;i++) {
-		if (duenno[i]->getNombreDuenno() == nombduen) {
+		if (duenno[i]->getId() == id) {
 			s << duenno[i]->getMascotas() << endl;
 		}
 	}

@@ -46,13 +46,23 @@ void coleccionmascotas::agregarMascota(string nomb)
 
 }
 
+mascota* coleccionmascotas::buscarporNombre(string nomb)
+{
+	for (int i = 0; i < cant; i++) {
+		if (mascotas[i]->getNombre() == nomb) { 
+			return mascotas[i];  
+		}
+	}
+	return nullptr;
+}
+
 
 
 string coleccionmascotas::mostrarMascotas()
 {
 	stringstream s;
 	for (int i = 0; i < cant; i++) {
-		s << mascotas[i]->mostrarMascota() << endl;
+		s <<(i+1)<<"."<< mascotas[i]->mostrarMascota() << endl;
 	}
 	return s.str();
 }
