@@ -56,7 +56,6 @@ void menuprincipal::opcionUno() {
 	string duenoId;
 	string duennoNomb;
 	string nombreMas;
-	string idMas;
 	cout << "Submenu de administracion" << endl << endl;
 	cout << "1-Ingresar especialidades" << endl;
 	cout << "2-Ingresar Doctor (Por especialidad)" << endl;
@@ -96,6 +95,7 @@ void menuprincipal::opcionUno() {
 	case 3:
 		system("cls");
 		cout << "Favor ingrese el nombre del duenno" << endl;
+		cin.get();
 		getline(cin, duennoNomb);
 		cout << "Favor ingrese el id del duenno" << endl;
 		cin >> duenoId;
@@ -106,10 +106,9 @@ void menuprincipal::opcionUno() {
 		cout << "Favor ingrese su id" << endl;
 		cin >> duenoId;
 		cout << "Favor ingrese el nombre de la mascota" << endl;
+		cin.get();
 		getline(cin, nombreMas);
-		cout << "Favor ingrese el id de la mascota" << endl;
-		getline(cin, idMas);
-		duennos->ingresarMascotas(duenoId,nombreMas,idMas);
+		duennos->ingresarMascotas(duenoId,nombreMas);
 		break;
 	case 0:
 		system("cls");

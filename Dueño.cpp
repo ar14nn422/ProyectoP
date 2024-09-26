@@ -38,9 +38,9 @@ coleccionmascotas* Duenno::getMascotas()
 	return mascotas;
 }
 
-void Duenno::asignarMascotas(string nomb, string id)
+void Duenno::asignarMascotas(string nomb)
 {
-	mascotas->agregarMascota(nomb,id);
+	mascotas->agregarMascota(nomb);
 }
 
 

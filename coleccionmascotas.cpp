@@ -37,10 +37,10 @@ void coleccionmascotas::setTam(int ntam)
 	tam = ntam;
 }
 
-void coleccionmascotas::agregarMascota(string nomb, string id)
+void coleccionmascotas::agregarMascota(string nomb)
 {
 	if (cant < tam) {
-		mascotas[cant] =new mascota(nomb,id);
+		mascotas[cant] =new mascota(nomb);
 		cant++;
 	}
 

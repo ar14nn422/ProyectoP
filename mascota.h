@@ -6,14 +6,11 @@ using namespace std;
 class mascota {
 private:
 	string nombre;
-	string tipo;
 public:
 	mascota();
-	mascota(string, string);
+	mascota(string);
 	void setNombre(string);
 	string getNombre();
-	void setTipo(string);
-	string getTipo();
 	string mostrarMascota();
 };
 #endif // !MASCOTA_H

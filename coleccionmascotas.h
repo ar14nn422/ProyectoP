@@ -15,7 +15,7 @@ public:
 	int getTam();
 	void setCant(int);
 	void setTam(int);
-	void agregarMascota(string, string);
+	void agregarMascota(string);
 	string mostrarMascotas();
 };
 #endif

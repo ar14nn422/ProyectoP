@@ -43,11 +43,11 @@ void Doctor::agregarPaciente(mascota* paciente) {
 	}
 }
 void Doctor::borrarPaciente() {
-	int tipo;
+	string nombre;
 	cout << "Que mascota desea eliminar" << endl;
-	cin >> tipo;
+	cin >> nombre;
 	for (int i = 0;i < tam;i++) {
-		if (masc[tipo]->getTipo() == masc[i]->getTipo()) {
+		if (masc[i]->getNombre() == nombre) {
 			masc[i] = NULL;
 			masc[i] = masc[i + 1];
 			cant--;

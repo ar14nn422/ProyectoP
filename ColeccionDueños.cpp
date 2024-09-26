@@ -56,10 +56,10 @@ int ColeccionDueños::getposIdDuenno(string idD) {
 		}
 	}
 }
-void ColeccionDueños::ingresarMascotas(string id, string nombreMas, string idMas) {
+void ColeccionDueños::ingresarMascotas(string id, string nombreMas) {
 	if (cant < tam) {
 		mascotas[getposIdDuenno(id)]= new coleccionmascotas(5);
-		mascotas[getposIdDuenno(id)]->agregarMascota(nombreMas, idMas);
+		mascotas[getposIdDuenno(id)]->agregarMascota(nombreMas);
 		cant++;
 	}
 }
