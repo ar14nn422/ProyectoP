@@ -17,6 +17,9 @@ bool Doctor::reservar(int dias, int hora)
 		cant++;
 		return true;
 	}
+	else {
+		return false;
+	}
 }
 string Doctor::mostrarHorario()
 {
@@ -31,6 +34,7 @@ string Doctor::mostrarHorario()
 			bool estado = horario[aux]->getEstado();
 		}
 	}
+	return s.str();
 }
 
 void Doctor::agregarPaciente(mascota* paciente) {

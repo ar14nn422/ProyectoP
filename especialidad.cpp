@@ -14,15 +14,20 @@ bool especialidad::agregarDoc(string nombre) {
 		cantDoc++;
 		return true;
 	}
-	
+	else {
+		return false;
+	}
 }
 string especialidad::getNombre() {
 	return nombre;
 }
 string especialidad::getDoctor() {
-	for (int i = 0;i < 10;i++) {
-		return doc[i]->getNombreDoc();
+	stringstream s;
+	for (int i = 0;i < cantDoc;i++) {
+		s<<doc[i]->getNombreDoc()<<endl;
+	
 	}
+	return s.str();
 	
 }
 especialidad::~especialidad() {
