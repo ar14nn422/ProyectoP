@@ -126,7 +126,7 @@ void menuprincipal::opcionDos() {
 	cout << "1-Sacar Cita" << endl;
 	cout << "2-Cancelar Cita" << endl;
 	cout << "3-Mostrar Calendario de Citas por Doctor" << endl;
-	cout << "4- Mostrar Citas por Due?o" << endl;
+	cout << "4- Mostrar Citas por Duenno" << endl;
 	cout << "0-Regresar al menu principal" << endl;
 	cout << "Favor ingrese su respuesta: " << endl;
 	cin >> respuesta;

@@ -32,9 +32,8 @@ string coleccionespecialidades::toStringEspc() {
 }
 string coleccionespecialidades::toStringDocs(int opUsuar) {
 	stringstream s;
-	for (int i = 0;i < 10;i++) {
-		s << i << "- " << especial[opUsuar]->getDoctor() << endl;
-	}
+		s <<especial[opUsuar]->getDoctor() << endl;
+
 	return s.str();
 }
 
