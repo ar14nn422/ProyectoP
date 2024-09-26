@@ -24,6 +24,14 @@ bool coleccionespecialidades::adminOpDos(int opUsuar,string nomDoc) {
 	}
 
 }
+especialidad* coleccionespecialidades::encontrarEspecialidad(string esp) {
+	for (int i = 0;i < cantEsp;i++) {
+		if (especial[i]->getNombre() == esp) {
+			return especial[i];
+		}
+	}
+	return nullptr;
+}
 string coleccionespecialidades::getEspecialidad(int opUsuar) {
 	return especial[opUsuar]->getNombre();
 }

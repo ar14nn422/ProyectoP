@@ -18,6 +18,14 @@ bool especialidad::agregarDoc(string nombre) {
 		return false;
 	}
 }
+Doctor* especialidad::encontrarNombre(string nombre) {
+	for (int i = 0;i < cantDoc;i++) {
+		if (doc[i]->getNombreDoc() == nombre) {
+			return doc[i];
+		}
+	}
+	return nullptr;
+}
 string especialidad::getNombre() {
 	return nombre;
 }
