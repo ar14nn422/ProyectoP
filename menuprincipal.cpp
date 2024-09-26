@@ -127,7 +127,7 @@ void menuprincipal::opcionDos() {
 	string idDuenno;
 	Duenno* dseleccionado = duennos->encontrarId(idDuenno);
 	mascota* mascotad = dseleccionado->seleccionar(opc);
-	//especialidad* espeSeleccionada = coleccionespecialidades->seleccionarEspecialidad();
+	//especialidad* espeSeleccionada = coleccionespecialidades->seleccionarEspecialidad(opcion);
 	cout << "Submenu de control de citas" << endl << endl;
 	cout << "1-Sacar Cita" << endl;
 	cout << "2-Cancelar Cita" << endl;
