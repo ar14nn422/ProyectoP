@@ -1,7 +1,8 @@
 #include "horas.h"
 
 horas::horas(string dia, string hora)
-{
+{	
+	ocupado = false;
 	this->dia = dia;
 	this->hora = hora;
 }

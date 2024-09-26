@@ -30,7 +30,7 @@ string Doctor::mostrarHorario()
 	for (int dia = 0; dia < dias; dia++) {
 		s << diasSemana[dia] << ":" << endl;
 		for (int hora = 0; hora < totalHoras; hora++) {
-			int aux = dia * hora + hora;
+			int aux = dia * hora;
 			bool estado = horario[aux]->getEstado();
 		}
 	}
