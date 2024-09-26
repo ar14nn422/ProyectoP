@@ -130,11 +130,11 @@
     <ClCompile Include="Agenda.cpp" />
     <ClCompile Include="Cita.cpp" />
     <ClCompile Include="ColeccionDueños.cpp" />
+    <ClCompile Include="coleccionespecialidades.cpp" />
     <ClCompile Include="coleccionmascotas.cpp" />
     <ClCompile Include="Doctor.cpp" />
     <ClCompile Include="Dueño.cpp" />
     <ClCompile Include="especialidad.cpp" />
-    <ClCompile Include="especialidades.cpp" />
     <ClCompile Include="horas.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="mascota.cpp" />
@@ -144,11 +144,11 @@
     <ClInclude Include="Agenda.h" />
     <ClInclude Include="Cita.h" />
     <ClInclude Include="ColeccionDueños.h" />
+    <ClInclude Include="coleccionEspecialidades.h" />
     <ClInclude Include="coleccionmascotas.h" />
     <ClInclude Include="Doctor.h" />
     <ClInclude Include="Dueño.h" />
     <ClInclude Include="especialidad.h" />
-    <ClInclude Include="especialidades.h" />
     <ClInclude Include="horas.h" />
     <ClInclude Include="mascota.h" />
     <ClInclude Include="menuprincipal.h" />

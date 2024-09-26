@@ -48,10 +48,7 @@
     <ClCompile Include="especialidad.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="especialidades.h">
-      <Filter>Archivos de encabezado</Filter>
-    </ClCompile>
-    <ClCompile Include="especialidades.cpp">
+    <ClCompile Include="coleccionespecialidades.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
@@ -84,6 +81,9 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="especialidad.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="coleccionEspecialidades.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
