@@ -6,7 +6,7 @@ Duenno::Duenno() {
 }
 Duenno::Duenno(string nombred, string id) {
 	NombreDuenno = nombred;
-	id = id;
+	this->id = id;
 	this->mascotas = mascotas;
 }
 void Duenno::setNombreDuenno(string nombred)
@@ -15,7 +15,7 @@ void Duenno::setNombreDuenno(string nombred)
 }
 
 void Duenno::setId(string id) {
-	id = id;
+	this->id = id;
 }
 
 void Duenno::setColeccionmascotas(coleccionmascotas* mascotas)
@@ -33,9 +33,10 @@ string Duenno::getId()
 	return id;
 }
 
-coleccionmascotas* Duenno::getMascotas()
+string Duenno::getMascotas()
 {
-	return mascotas;
+	return mascotas->mostrarMascotas();
+	
 }
 
 void Duenno::asignarMascotas(string nomb)
@@ -45,8 +46,12 @@ void Duenno::asignarMascotas(string nomb)
 
 mascota* Duenno::seleccionar(string opn)
 {
-	
-	return mascotas->buscarporNombre(opn);
+		if (opn == mascotas->mostrarMascotas()) {
+			return mascotas->buscarporNombre(opn);
+		}
+		else {
+			return NULL;
+		}
 }
 
 

@@ -5,13 +5,16 @@
 class coleccionespecialidades {
 private:
 	especialidad** especial;
+	Doctor** doct;
 	int cantEsp;
 public:
 	coleccionespecialidades();
 	bool adminOpUno(string);
 	bool adminOpDos(int, string);
+	string getEspecialidad(int);
 	string toStringEspc();
 	string toStringDocs(int);
+	string getPacientes(string);
 	~coleccionespecialidades();
 };
 #endif // !COLECCIONESPECIALIDADES_H

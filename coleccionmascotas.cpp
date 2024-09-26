@@ -61,8 +61,8 @@ mascota* coleccionmascotas::buscarporNombre(string nomb)
 string coleccionmascotas::mostrarMascotas()
 {
 	stringstream s;
-	for (int i = 0; i < cant; i++) {
-		s <<(i+1)<<"."<< mascotas[i]->mostrarMascota() << endl;
+	for (int i = 0;i < cant;i++) {
+		s << mascotas[i]->getNombre() << endl;
 	}
 	return s.str();
 }

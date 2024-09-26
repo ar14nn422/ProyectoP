@@ -20,31 +20,22 @@ void menuprincipal::menu() {
 		case 1:
 			system("cls");
 			opcionUno();
-			cout << "Desea realizar alguna otra funcion?(s/n)" << endl;
-			cin >> respuestaFinal;
-			system("cls");
 			break;
 		case 2:
 			system("cls");
 			opcionDos();
-			cout << "Desea realizar alguna otra funcion?(s/n)" << endl;
-			cin >> respuestaFinal;
-			system("cls");
 			break;
 		case 3:
 			system("cls");
 			opcionTres();
-			cout << "Desea realizar alguna otra funcion?(s/n)" << endl;
-			cin >> respuestaFinal;
-			system("cls");
 			break;
 		default:
 			system("cls");
-			cout << "Desea realizar alguna otra funcion?(s/n)" << endl;
-			cin >> respuestaFinal;
-			system("cls");
 			break;
 		}
+		cout << "Desea realizar alguna otra funcion?(s/n)" << endl;
+		cin >> respuestaFinal;
+		system("cls");
 	} while (respuestaFinal == 's');
 	
 }
@@ -83,10 +74,9 @@ void menuprincipal::opcionUno() {
 		cin.get();
 		cout << "Favor ingrese el nombre del doctor" << endl;
 		getline(cin, nomDoc);
-		cin.get();
 		system("cls");
 		if (esp->adminOpDos(opUsuar, nomDoc)==true) {
-			cout << "Se ha registrado un doctor" << endl;
+			cout << "Se ha registrado un doctor" << endl<<endl;
 		}
 		else {
 			cout << "No se ha registrado el doctor, revisar la especialidad asignada" << endl;
@@ -147,10 +137,6 @@ void menuprincipal::opcionDos() {
 		cout << "Ingrese la especialidad deseada:" << endl;
 		cout << esp->toStringEspc();
 		cin >> opcion;
-
-
-		
-		
 		break;
 	case 2:
 		system("cls");
@@ -175,7 +161,8 @@ void menuprincipal::opcionDos() {
 void menuprincipal::opcionTres() {
 	int respuesta;
 	int verDoc;
-	string nombreDuen;
+	string idDuenno;
+	string pacientes;
 	cout << "Submenu para Busquedas y listados" << endl << endl;
 	cout << "1-Mostrar Listados de Especialidades" << endl;
 	cout << "2-Mostrar Listado de Doctores por Especialidad" << endl;
@@ -194,18 +181,24 @@ void menuprincipal::opcionTres() {
 		cout << "Favor seleccione el numero asociado a la especialidad de la que desea ver los doctores" << endl;
 		cout<<esp->toStringEspc();
 		cin >> verDoc;
-		cin.get();
+		system("cls");
+		cout << "Doctores de la especialidad " << esp->getEspecialidad(verDoc) << endl;
 		cout<<esp->toStringDocs(verDoc);
 		break;
 	case 3:
 		system("cls");
-		cout << "Favor ingrese su nombre" << endl;
-		cin >> nombreDuen;
+		cout << "Favor ingrese su id" << endl;
+		cin >> idDuenno;
 		cout << "A continuacion se le mostraran sus mascotas" << endl;
-		cout << duennos->mostrarMascotas(nombreDuen) << endl;
+		cout << duennos->mostrarMascotas(idDuenno) << endl;
 		break;
 	case 4:
 		system("cls");
+		cout << "Favor ingrese el nombre del doctor" << endl;
+		cin >> pacientes;
+		system("cls");
+		cout << "Estos son los pacientes registrados con este doctor" << endl;
+		cout<<esp->getPacientes(pacientes)<<endl;
 		break;
 	case 0:
 		system("cls");
