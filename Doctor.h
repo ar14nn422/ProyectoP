@@ -5,30 +5,22 @@
 using namespace std;
 class Doctor {
 private:
-	string nombre;
-	mascota** masc;
-	horas** lunes;
-	horas** martes;
-	horas** miercoles;
-	horas** jueves;
-	horas** viernes;
-	horas** sabado;
 	int tam;
 	int cant;
-	int hora;
+	int dias;
+	int totalHoras;
+	string nombre;
+	mascota** masc;
+	horas** horario;
+
 public:
 	Doctor(string);
-	void generarHorario();
-	void llamarLunes();
-	void llamarMartes();
-	void llamarMiercoles();
-	void llamarJueves();
-	void llamarViernes();
-	void llamarSabado();
+	bool reservar(int, int);
+	string mostrarHorario();
 	void agregarPaciente(mascota*);
 	void borrarPaciente();
 	string getPacientes();
 	string getNombreDoc();
 	~Doctor();
 };
-#endif // 
+#endif //

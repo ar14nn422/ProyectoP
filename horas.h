@@ -7,9 +7,17 @@ using namespace std;
 class horas {
 private:
 	bool ocupado;
+	string hora;
+	string dia;
 public:
+	horas(string, string);
 	horas();
 	void setEstado(bool);
 	bool getEstado();
+	void setHora(string);
+	string getHora();
+	void setDia(string);
+	string getDia();
+	//string horario();
 };
-#endif // !HORA_H
+#endif // !HORAS_H
