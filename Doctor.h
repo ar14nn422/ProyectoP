@@ -5,8 +5,6 @@
 using namespace std;
 class Doctor {
 private:
-	int tam;
-	int cant;
 	int dias;
 	int totalHoras;
 	string nombre;
