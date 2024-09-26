@@ -7,6 +7,8 @@ class Doctor {
 private:
 	int dias;
 	int totalHoras;
+	int tam;
+	int cant;
 	string nombre;
 	mascota** masc;
 	horas** horario;

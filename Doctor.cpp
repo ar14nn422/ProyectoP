@@ -3,6 +3,8 @@
 Doctor::Doctor(string nomb)
 {
 	nombre = nomb;
+	cant = 0;
+	tam = 0;
 	totalHoras = 8;
 	dias = 6;
 	masc = new mascota * [tam];
