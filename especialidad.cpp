@@ -30,7 +30,7 @@ string especialidad::getNombre() {
 string especialidad::getDoctor() {
 	stringstream s;
 	for (int i = 0;i < cantDoc;i++) {
-		s<<i<<"- "<<doc[i]->getNombreDoc() << endl;
+		s<<(i+1)<<"- "<<doc[i]->getNombreDoc() << endl;
 	
 	}
 	return s.str();

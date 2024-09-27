@@ -36,13 +36,13 @@ string coleccionespecialidades::getEspecialidad(int opUsuar) {
 string coleccionespecialidades::toStringEspc() {
 	stringstream s;
 	for (int i = 0;i < 7;i++) {
-		s << i << "- " << especial[i]->getNombre() << endl;
+		s << (i+1) << "- " << especial[i]->getNombre() << endl;
 	}
 	return s.str();
 }
 string coleccionespecialidades::toStringDocs(int opUsuar) {
 	stringstream s;
-		s <<especial[opUsuar]->getDoctor() << endl;
+		s <<especial[opUsuar-1]->getDoctor() << endl;
 
 	return s.str();
 }
