@@ -11,7 +11,7 @@ public:
 	coleccionespecialidades();
 	bool adminOpUno(string);
 	bool adminOpDos(int, string);
-	especialidad* encontrarEspecialidad(string);
+	especialidad* encontrarEspecialidad(int);
 	string getEspecialidad(int);
 	string toStringEspc();
 	string toStringDocs(int);
