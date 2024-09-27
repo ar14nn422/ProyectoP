@@ -76,7 +76,7 @@ void menuprincipal::opcionUno() {
 		cout << "Favor ingrese el nombre del doctor" << endl;
 		getline(cin, nomDoc);
 		system("cls");
-		if (esp->adminOpDos(opUsuar, nomDoc)==true) {
+		if (esp->adminOpDos(opUsuar-1, nomDoc)==true) {
 			cout << "Se ha registrado un doctor" << endl<<endl;
 		}
 		else {
@@ -158,13 +158,13 @@ void menuprincipal::opcionDos() {
 		cout << "Seleccione la especialidad que desea:" << endl;
 		cout << esp->toStringEspc();
 		cin>>opcion;
-		espSeleccionada = esp->encontrarEspecialidad(opcion);
+		espSeleccionada = esp->encontrarEspecialidad(opcion-1);
 		if (espSeleccionada) {
 			cout <<espSeleccionada->getNombre() << endl;
 		}
 		cout << espSeleccionada->getDoctor() << endl;
 		cin >> opcion;
-		docSeleccionado = espSeleccionada->encontrarDoc(opcion);
+		docSeleccionado = espSeleccionada->encontrarDoc(opcion-1);
 		if (docSeleccionado) {
 			cout <<"Doctor seleccionado:"<< docSeleccionado->getNombreDoc() << endl;
 		}
@@ -235,7 +235,7 @@ void menuprincipal::opcionTres() {
 		cout<<esp->toStringEspc();
 		cin >> verDoc;
 		system("cls");
-		cout << "Doctores de la especialidad " << esp->getEspecialidad(verDoc) << endl;
+		cout << "Doctores de la especialidad " << esp->getEspecialidad(verDoc-1) << endl;
 		cout<<esp->toStringDocs(verDoc);
 		break;
 	case 3:
