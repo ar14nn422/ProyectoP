@@ -116,7 +116,7 @@ void menuprincipal::opcionUno() {
 }
 void menuprincipal::opcionDos() {
 	int respuesta;
-	string opcion;
+	int opcion;
 	string nombrem;
 	string idDuenno;
 	Duenno* dseleccionado = nullptr;
@@ -154,10 +154,10 @@ void menuprincipal::opcionDos() {
 		cout << esp->toStringEspc();
 		cin>>opcion;
 		espSeleccionada = esp->encontrarEspecialidad(opcion);
-		if (!espSeleccionada) {
-			cout << "Especialidad no encontrada." << endl;
-			break;
+		if (espSeleccionada) {
+			cout <<espSeleccionada->getNombre() << endl;
 		}
+		cout << espSeleccionada->getDoctor() << endl;
 		break;
 	case 2:
 		system("cls");
