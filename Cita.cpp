@@ -97,18 +97,6 @@ void Cita::reactivarCita()
 	setEstado(true);
 }
 
-/*void Cita::cancelarCita()
-{
-	setEstado(false);
-}
-
-void Cita::modificarCita(int hora, string dia)//
-{
-	if (getEstado() == true) {
-		setHora(hora);
-		setDia(dia);
-	}
-}*/
 
 string Cita::ImprimirCita()
 {

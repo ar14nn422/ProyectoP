@@ -48,6 +48,24 @@ void Agenda::agregarCita(Cita* nuevaCita)
 	}
 }
 
+Doctor* Agenda::asociadosDuenno(Duenno* duenno)
+{
+	Doctor* docAsociados = nullptr;
+
+	for (int i = 0; i < cant; i++) {
+		Cita* citaActual = cita[i];
+		if (citaActual->getDuenno()->getId() == duenno->getId()) {
+			Doctor* doctorCita = citaActual->getDoctor();
+			return docAsociados;
+		}
+
+	}
+}
+
+/*void Agenda::cancelarCita(string idDuenno)
+{
+}
+*/
 /*string Agenda::mostrarCitasDia(string dia)
 {
 	stringstream s;

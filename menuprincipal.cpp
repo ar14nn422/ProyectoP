@@ -125,6 +125,7 @@ void menuprincipal::opcionDos() {
 	mascota* mseleccionada = nullptr;
 	especialidad* espSeleccionada = nullptr;
 	Doctor* docSeleccionado = nullptr;
+	Doctor* docAsociados = nullptr;
 	Cita* c1 = nullptr;
 	cout << "Submenu de control de citas" << endl << endl;
 	cout << "1-Sacar Cita" << endl;
@@ -183,6 +184,14 @@ void menuprincipal::opcionDos() {
 
 		break;
 	case 2:
+		cout << "Ingrese el id del dueño:" << endl;
+		getline(cin, idDuenno);
+		dseleccionado = duennos->encontrarId(idDuenno);
+		if (dseleccionado == nullptr) {
+			cout << "No se encontró ningún dueño con este id" << endl;
+		}
+		docAsociados = citas->asociadosDuenno(dseleccionado);
+
 		system("cls");
 		break;
 	case 3:
