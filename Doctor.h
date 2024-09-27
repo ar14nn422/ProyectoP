@@ -5,7 +5,7 @@
 using namespace std;
 class Doctor {
 private:
-	int dias;
+	int totalDias;
 	int totalHoras;
 	int tam;
 	int cant;
@@ -15,7 +15,7 @@ private:
 
 public:
 	Doctor(string);
-	bool reservar(int, int);
+	bool reservar(string, int);
 	string mostrarHorario();
 	void agregarPaciente(mascota*);
 	void borrarPaciente();

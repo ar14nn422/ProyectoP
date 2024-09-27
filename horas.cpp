@@ -1,6 +1,6 @@
 #include "horas.h"
 
-horas::horas(string dia, string hora)
+horas::horas(string dia, int hora)
 {	
 	ocupado = false;
 	this->dia = dia;
@@ -10,7 +10,7 @@ horas::horas(string dia, string hora)
 horas::horas() {
 	ocupado = false;
 	dia = " ";
-	hora = " ";
+	hora = 0;
 }
 void horas::setEstado(bool est) {
 	ocupado = est;
@@ -19,12 +19,12 @@ bool horas::getEstado() {
 	return ocupado;
 }
 
-void horas::setHora(string hora)
+void horas::setHora(int hora)
 {
 	this->hora = hora;
 }
 
-string horas::getHora()
+int horas::getHora()
 {
 	return hora;
 }

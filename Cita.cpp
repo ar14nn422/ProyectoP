@@ -5,10 +5,10 @@ Cita::Cita(int hora, string dia, bool estado, especialidad* espe,Doctor* doctor,
 	this->hora = hora;
 	this->dia = dia;
 	this->estado = estado;
-	this->espe = espe;
-	this->doctor = doctor;
-	this->duenno = duenno;
-	this->paciente = paciente;
+	this->espe = nullptr;//
+	this->doctor = nullptr;//
+	this->duenno = new Duenno();
+	this->paciente = new mascota();
 }
 
 Cita::Cita()

@@ -119,9 +119,13 @@ void menuprincipal::opcionDos() {
 	int opcion;
 	string nombrem;
 	string idDuenno;
+	string dia;
+	int hora=0;
 	Duenno* dseleccionado = nullptr;
 	mascota* mseleccionada = nullptr;
 	especialidad* espSeleccionada = nullptr;
+	Doctor* docSeleccionado = nullptr;
+	Cita* c1 = nullptr;
 	cout << "Submenu de control de citas" << endl << endl;
 	cout << "1-Sacar Cita" << endl;
 	cout << "2-Cancelar Cita" << endl;
@@ -148,7 +152,7 @@ void menuprincipal::opcionDos() {
 		getline(cin, nombrem);
 		mseleccionada = dseleccionado->seleccionarMasc(nombrem);
 		if (mseleccionada) {
-			cout << "Mascota seleccionada:" << mseleccionada->getNombre() << endl;
+			cout << "Paciente seleccionado:" << mseleccionada->getNombre() << endl;
 		}
 		cout << "Seleccione la especialidad que desea:" << endl;
 		cout << esp->toStringEspc();
@@ -158,6 +162,25 @@ void menuprincipal::opcionDos() {
 			cout <<espSeleccionada->getNombre() << endl;
 		}
 		cout << espSeleccionada->getDoctor() << endl;
+		cin >> opcion;
+		docSeleccionado = espSeleccionada->encontrarDoc(opcion);
+		if (docSeleccionado) {
+			cout <<"Doctor seleccionado:"<< docSeleccionado->getNombreDoc() << endl;
+		}
+		cout << docSeleccionado->mostrarHorario() << endl;
+		cout << "Ingrese el dia:" << endl;
+		cin >> dia;
+		cout << "Ingrese la hora:" << endl;
+		cin >> hora;
+		if (hora > 17 && hora < 9 && hora == 12) {
+				cout << "Esta hora no se encuentra disponible" << endl;
+		}
+		docSeleccionado->reservar(dia, hora);
+		c1 = new Cita(hora, dia ,true, espSeleccionada, docSeleccionado, dseleccionado, mseleccionada);
+		cout<<c1->ImprimirCita();
+		delete c1;
+
+
 		break;
 	case 2:
 		system("cls");
@@ -236,4 +259,5 @@ menuprincipal::~menuprincipal() {
 	delete citas;
 	delete esp;
 	delete duennos;
+	
 }

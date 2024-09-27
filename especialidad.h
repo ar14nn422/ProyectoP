@@ -11,7 +11,7 @@ private:
 public:
 	especialidad(string);
 	bool agregarDoc(string);
-	Doctor* encontrarNombre(string);
+	Doctor* encontrarDoc(int);
 	string getNombre();
 	string getDoctor();
 	~especialidad();

@@ -7,15 +7,15 @@ using namespace std;
 class horas {
 private:
 	bool ocupado;
-	string hora;
+	int hora;
 	string dia;
 public:
-	horas(string, string);
+	horas(string, int);
 	horas();
 	void setEstado(bool);
 	bool getEstado();
-	void setHora(string);
-	string getHora();
+	void setHora(int);
+	int getHora();
 	void setDia(string);
 	string getDia();
 	//string horario();
