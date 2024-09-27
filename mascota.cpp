@@ -11,6 +11,11 @@ mascota::mascota(string nom)
 	this->nombre = nom;
 }
 
+mascota::~mascota()
+{
+
+}
+
 void mascota::setNombre(string nom)
 {
 	this->nombre = nom;

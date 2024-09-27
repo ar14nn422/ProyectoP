@@ -10,6 +10,7 @@ private:
 public:
 	Duenno();
 	Duenno(string, string);
+	~Duenno();
 	void setNombreDuenno(string);
 	void setId(string);
 	void setColeccionmascotas(coleccionmascotas*);
@@ -17,7 +18,7 @@ public:
 	string getId();
 	string getMascotas();
 	void asignarMascotas(string);
-	mascota* seleccionar(string);
+	mascota* seleccionarMasc(string);
 	string mostrarMasc_d();
 
 

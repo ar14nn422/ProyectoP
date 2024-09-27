@@ -47,6 +47,7 @@ void menuprincipal::opcionUno() {
 	string duenoId;
 	string duennoNomb;
 	string nombreMas;
+	Duenno* dseleccionado = nullptr;
 	cout << "Submenu de administracion" << endl << endl;
 	cout << "1-Ingresar especialidades" << endl;
 	cout << "2-Ingresar Doctor (Por especialidad)" << endl;
@@ -89,6 +90,7 @@ void menuprincipal::opcionUno() {
 		getline(cin, duennoNomb);
 		cout << "Favor ingrese el id del duenno" << endl;
 		cin >> duenoId;
+
 		duennos->ingresarDuennos(duennoNomb, duenoId);
 		break;
 	case 4:
@@ -97,7 +99,9 @@ void menuprincipal::opcionUno() {
 		cin >> duenoId;
 		cout << "Favor ingrese el nombre de la mascota" << endl;
 		cin.get();
-		getline(cin, nombreMas);
+		getline(cin, nombreMas);		
+		dseleccionado = duennos->encontrarId(duenoId);
+		dseleccionado->asignarMascotas(nombreMas);
 		duennos->ingresarMascotas(duenoId,nombreMas);
 		break;
 	case 0:
@@ -112,12 +116,12 @@ void menuprincipal::opcionUno() {
 }
 void menuprincipal::opcionDos() {
 	int respuesta;
-	int opcion;
-	string opc;
+	string opcion;
+	string nombrem;
 	string idDuenno;
-	Duenno* dseleccionado = duennos->encontrarId(idDuenno);
-	mascota* mascotad = dseleccionado->seleccionar(opc);
-	//especialidad* espeSeleccionada = coleccionespecialidades->seleccionarEspecialidad(opcion);
+	Duenno* dseleccionado = nullptr;
+	mascota* mseleccionada = nullptr;
+	especialidad* espSeleccionada = nullptr;
 	cout << "Submenu de control de citas" << endl << endl;
 	cout << "1-Sacar Cita" << endl;
 	cout << "2-Cancelar Cita" << endl;
@@ -126,17 +130,34 @@ void menuprincipal::opcionDos() {
 	cout << "0-Regresar al menu principal" << endl;
 	cout << "Favor ingrese su respuesta: " << endl;
 	cin >> respuesta;
+	cin.ignore();
 	switch (respuesta) {
 	case 1:
 		system("cls");
-		cout << "Ingrese su id:"<< endl;
+		cout << "Ingrese el id del duenno:" << endl;
 		getline(cin, idDuenno);
-		cout<<dseleccionado->mostrarMasc_d()<<endl;
-		cout << "Ingrese el nombre de la mascota para la cual será la cita, debe ser igual a como se muestra en la lista:" << endl;
-		getline(cin, opc);
-		cout << "Ingrese la especialidad deseada:" << endl;
+		dseleccionado= duennos->encontrarId(idDuenno);
+		if (!dseleccionado) {
+			cout << "Dueño no encontrado" << endl;
+		}
+		else {
+			cout << "Encontrado"<<endl;
+		}
+		cout << dseleccionado->mostrarMasc_d() << endl;
+		cout << "Ingrese la mascota a la cual se le asignara la cita(nombre completo):" << endl;
+		getline(cin, nombrem);
+		mseleccionada = dseleccionado->seleccionarMasc(nombrem);
+		if (mseleccionada) {
+			cout << "Mascota seleccionada:" << mseleccionada->getNombre() << endl;
+		}
+		cout << "Seleccione la especialidad que desea:" << endl;
 		cout << esp->toStringEspc();
-		cin >> opcion;
+		cin>>opcion;
+		espSeleccionada = esp->encontrarEspecialidad(opcion);
+		if (!espSeleccionada) {
+			cout << "Especialidad no encontrada." << endl;
+			break;
+		}
 		break;
 	case 2:
 		system("cls");
@@ -212,4 +233,7 @@ void menuprincipal::opcionTres() {
 }
 
 menuprincipal::~menuprincipal() {
+	delete citas;
+	delete esp;
+	delete duennos;
 }

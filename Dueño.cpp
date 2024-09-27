@@ -1,4 +1,5 @@
 #include "Dueño.h"
+
 Duenno::Duenno() {
 	NombreDuenno = " ";
 	id = " ";
@@ -7,7 +8,12 @@ Duenno::Duenno() {
 Duenno::Duenno(string nombred, string id) {
 	NombreDuenno = nombred;
 	this->id = id;
-	this->mascotas = mascotas;
+	mascotas = new coleccionmascotas(5);
+
+}
+Duenno::~Duenno()
+{
+	delete mascotas;
 }
 void Duenno::setNombreDuenno(string nombred)
 {
@@ -44,14 +50,10 @@ void Duenno::asignarMascotas(string nomb)
 	mascotas->agregarMascota(nomb);
 }
 
-mascota* Duenno::seleccionar(string opn)
+mascota* Duenno::seleccionarMasc(string nombrem)
 {
-		if (opn == mascotas->mostrarMascotas()) {
-			return mascotas->buscarporNombre(opn);
-		}
-		else {
-			return NULL;
-		}
+
+	return mascotas->buscarporNombre(nombrem);
 }
 
 

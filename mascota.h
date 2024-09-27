@@ -9,6 +9,7 @@ private:
 public:
 	mascota();
 	mascota(string);
+	~mascota();
 	void setNombre(string);
 	string getNombre();
 	string mostrarMascota();
