@@ -154,6 +154,7 @@ void menuprincipal::opcionDos() {
 		cout << dseleccionado->mostrarMasc_d() << endl;
 		cout << "Ingrese la mascota a la cual se le asignara la cita(nombre completo):" << endl;
 		getline(cin, nombrem);
+		system("cls");
 		mseleccionada = dseleccionado->seleccionarMasc(nombrem);
 		if (mseleccionada) {
 			cout << "Paciente seleccionado:" << mseleccionada->getNombre() << endl;
@@ -161,12 +162,14 @@ void menuprincipal::opcionDos() {
 		cout << "Seleccione la especialidad que desea:" << endl;
 		cout << esp->toStringEspc();
 		cin >> opcion;
+		system("cls");
 		espSeleccionada = esp->encontrarEspecialidad(opcion - 1);
 		if (espSeleccionada) {
 			cout << espSeleccionada->getNombre() << endl;
 		}
-		cout << espSeleccionada->getDoctor() << endl;
+		cout << espSeleccionada->mostrarDoctor() << endl;
 		cin >> opcion;
+		system("cls");
 		docSeleccionado = espSeleccionada->encontrarDoc(opcion - 1);
 		if (docSeleccionado) {
 			cout << "Doctor seleccionado:" << docSeleccionado->getNombreDoc() << endl;
@@ -212,7 +215,7 @@ void menuprincipal::opcionDos() {
 		}
 
 		cout << "Seleccione el doctor para ver su calendario de citas:" << endl;
-		cout << espSeleccionada->getDoctor() << endl;
+		cout << espSeleccionada->mostrarDoctor() << endl;
 		cin >> opcion;
 
 		docSeleccionado = espSeleccionada->encontrarDoc(opcion - 1);

@@ -42,14 +42,16 @@ string coleccionespecialidades::toStringEspc() {
 }
 string coleccionespecialidades::toStringDocs(int opUsuar) {
 	stringstream s;
-		s <<especial[opUsuar-1]->getDoctor() << endl;
+		s <<especial[opUsuar-1]->mostrarDoctor() << endl;
 
 	return s.str();
 }
 string coleccionespecialidades::getPacientes(string doc) {
+	string docAux;
 	stringstream s;
 	for (int i = 0;i < 10;i++) {
-		if (doc == especial[i]->getDoctor()) {
+		especial[i]->getDoctor(doc) = docAux;
+		if (doc == docAux) {
 			s<<doct[i]->getPacientes()<<endl;
 		}
 	}
