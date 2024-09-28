@@ -27,22 +27,20 @@ if (horario[cant]->getEstado() == false) {
 }
 string Doctor::mostrarHorario()
 {
+	int dia = 0;
 	string diasSemana[] = { "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado" };
 	string horas[] = { "9:00", "10:00", "11:00", "13:00", "14:00", "15:00", "16:00" };
 	stringstream s;
 
 	s << "Horario del doctor: " << nombre << endl;
-
-	for (int dia = 0; dia < totalDias; dia++) {
-		s << diasSemana[dia] << ":" << endl;
+	s << diasSemana[dia] << ":      " << diasSemana[dia + 1] << ":      " << diasSemana[dia + 2] << ":      " << diasSemana[dia + 3] << ":      " << diasSemana[dia + 4] << ":      " << diasSemana[dia + 5] << ":" << endl;
 		for (int hora = 0; hora < totalHoras; hora++) {
 			int aux = dia * totalHoras + hora;
 			bool estado = horario[aux]->getEstado(); 
 
 			
-			s << "  " << horas[hora] << " - " << (estado ? "Ocupado" : "Libre") << endl;
+			s << horas[hora] << " - " << (estado ? "Ocupado" : "Libre") << endl;
 		}
-	}
 	return s.str();
 	/*string diasSemana[] = {"Lunes", "Martes","Miércoles","Jueves","Viernes","Sábado"};
 	string horas[] = { "9:00", "10:00", "11:00", "13:00", "14:00", "15:00", "16:00" };

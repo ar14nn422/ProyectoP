@@ -147,6 +147,7 @@ void menuprincipal::opcionDos() {
 		dseleccionado = duennos->encontrarId(idDuenno);
 		if (!dseleccionado) {
 			cout << "Dueño no encontrado" << endl;
+			break;
 		}
 		else {
 			cout << "Encontrado" << endl;
@@ -159,6 +160,9 @@ void menuprincipal::opcionDos() {
 		if (mseleccionada) {
 			cout << "Paciente seleccionado:" << mseleccionada->getNombre() << endl;
 		}
+		else { 
+			cout << "La mascota no esta en el sistema" << endl;
+			break; }
 		cout << "Seleccione la especialidad que desea:" << endl;
 		cout << esp->toStringEspc();
 		cin >> opcion;
@@ -167,6 +171,10 @@ void menuprincipal::opcionDos() {
 		if (espSeleccionada) {
 			cout << espSeleccionada->getNombre() << endl;
 		}
+		else {
+			cout << "Especialidad no encontrada" << endl;
+			break; }
+		cout << "Doctores de la especialidad " << espSeleccionada->getNombre() << endl;
 		cout << espSeleccionada->mostrarDoctor() << endl;
 		cin >> opcion;
 		system("cls");
