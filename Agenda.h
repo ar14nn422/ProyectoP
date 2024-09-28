@@ -13,10 +13,10 @@ public:
 	int getTam();
 	int getCant();
 	void agregarCita(Cita*);
-	Doctor* asociadosDuenno(Duenno*);
-	void modificarCita();
-	void cancelarCita();
-	/*string mostrarCitasDia(string);
-	string mostrarCitas();*/
+	//Doctor* asociadosDuenno(Duenno*);
+	//void modificarCita();
+	//void cancelarCita();
+	string mostrarCitasDia(string);
+	string mostrarCitasDuenno(Duenno* duenno);
+	/*string mostrarCitas();*/
 };
-

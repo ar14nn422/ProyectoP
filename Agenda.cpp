@@ -48,7 +48,7 @@ void Agenda::agregarCita(Cita* nuevaCita)
 	}
 }
 
-Doctor* Agenda::asociadosDuenno(Duenno* duenno)
+/*Doctor* Agenda::asociadosDuenno(Duenno* duenno)
 {
 	Doctor* docAsociados = nullptr;
 
@@ -60,13 +60,13 @@ Doctor* Agenda::asociadosDuenno(Duenno* duenno)
 		}
 
 	}
-}
+}*/
 
 /*void Agenda::cancelarCita(string idDuenno)
 {
 }
 */
-/*string Agenda::mostrarCitasDia(string dia)
+string Agenda::mostrarCitasDia(string dia)
 {
 	stringstream s;
 	for (int i = 0; i < cant; i++) {
@@ -78,12 +78,34 @@ Doctor* Agenda::asociadosDuenno(Duenno* duenno)
 		}
 
 	}
-	
+
 	return string();
+}
+string Agenda::mostrarCitasDuenno(Duenno* duenno)
+{
+	stringstream ss;
+	bool citasEncontradas = false;
+
+	for (int i = 0; i < cant; i++) {
+		Cita* citaActual = cita[i];
+		if (citaActual->getDuenno()->getId() == duenno->getId()) {  // Verifica si la cita pertenece al dueño
+			ss << "- Mascota: " << citaActual->getPaciente()->getNombre()
+				<< " | Doctor: " << citaActual->getDoctor()->getNombreDoc()
+				<< " | Especialidad: " << citaActual->getEspecialidad()->getNombre()
+				<< " | Dia: " << citaActual->getDia()
+				<< " | Hora: " << citaActual->getHora() << endl;
+			citasEncontradas = true;
+		}
+	}
+
+	if (!citasEncontradas) {
+		ss << "No hay citas para el dueño con ID: " << duenno->getId() << endl;
+	}
+
+	return ss.str();
 }
 
-string Agenda::mostrarCitas()
-{
-	return string();
-}
-*/
+	//string Agenda::mostrarCitas()
+	//{
+	//	return string();
+	//}

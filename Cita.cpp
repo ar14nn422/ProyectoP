@@ -1,14 +1,14 @@
 ﻿#include "Cita.h"
 
-Cita::Cita(int hora, string dia, bool estado, especialidad* espe,Doctor* doctor, Duenno* duenno, mascota* paciente)
+Cita::Cita(int hora, string dia, bool estado, especialidad* espe, Doctor* doctor, Duenno* duenno, mascota* paciente)
 {
 	this->hora = hora;
 	this->dia = dia;
 	this->estado = estado;
-	this->espe = nullptr;//
-	this->doctor = nullptr;//
-	this->duenno = new Duenno();
-	this->paciente = new mascota();
+	this->espe = espe;//
+	this->doctor = doctor;//
+	this->duenno = duenno;
+	this->paciente = paciente;
 }
 
 Cita::Cita()
@@ -34,7 +34,7 @@ string Cita::getDia()
 
 void Cita::setHora(int hora)
 {
-	this ->hora = hora;
+	this->hora = hora;
 }
 
 void Cita::setDia(string dia)
