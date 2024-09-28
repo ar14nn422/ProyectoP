@@ -88,7 +88,7 @@ string Agenda::mostrarCitasDuenno(Duenno* duenno)
 
 	for (int i = 0; i < cant; i++) {
 		Cita* citaActual = cita[i];
-		if (citaActual->getDuenno()->getId() == duenno->getId()) {  // Verifica si la cita pertenece al dueño
+		if (citaActual->getDuenno()->getId() == duenno->getId()) {  /
 			ss << "- Mascota: " << citaActual->getPaciente()->getNombre()
 				<< " | Doctor: " << citaActual->getDoctor()->getNombreDoc()
 				<< " | Especialidad: " << citaActual->getEspecialidad()->getNombre()
