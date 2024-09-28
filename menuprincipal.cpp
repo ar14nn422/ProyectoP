@@ -187,7 +187,7 @@ void menuprincipal::opcionDos() {
 		cin >> dia;
 		cout << "Ingrese la hora:" << endl;
 		cin >> hora;
-		if (hora > 17 && hora < 9 && hora == 12) {
+		if (hora > 19 && hora < 8 && hora == 12) {
 			cout << "Esta hora no se encuentra disponible" << endl;
 		}
 		docSeleccionado->reservar(dia, hora);

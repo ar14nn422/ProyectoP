@@ -5,7 +5,7 @@ Doctor::Doctor(string nomb)
 	nombre = nomb;
 	cant = 0;
 	tam = 0;
-	totalHoras = 8;
+	totalHoras = 10;
 	totalDias = 6;
 	masc = new mascota * [tam];
 	horario = new horas*[totalDias*totalHoras];
@@ -29,18 +29,21 @@ string Doctor::mostrarHorario()
 {
 	int dia = 0;
 	string diasSemana[] = { "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado" };
-	string horas[] = { "9:00", "10:00", "11:00", "13:00", "14:00", "15:00", "16:00" };
+	string horas[] = {"8:00", "9:00", "10:00", "11:00", "13:00", "14:00", "15:00", "16:00","17:00","18:00"};
 	stringstream s;
 
 	s << "Horario del doctor: " << nombre << endl;
-	s << diasSemana[dia] << ":      " << diasSemana[dia + 1] << ":      " << diasSemana[dia + 2] << ":      " << diasSemana[dia + 3] << ":      " << diasSemana[dia + 4] << ":      " << diasSemana[dia + 5] << ":" << endl;
-		for (int hora = 0; hora < totalHoras; hora++) {
-			int aux = dia * totalHoras + hora;
-			bool estado = horario[aux]->getEstado(); 
+	for (dia;dia < totalDias;dia++) {
+		s << diasSemana[dia] << ":" << endl;
+			for (int hora = 0; hora < 10; hora++) {
+				int aux = dia * totalHoras + hora;
+				bool estado = horario[aux]->getEstado();
 
-			
-			s << horas[hora] << " - " << (estado ? "Ocupado" : "Libre") << endl;
-		}
+
+				s <<aux+1<<"- " << horas[hora] << " - " << (estado ? "Ocupado" : "Libre") << endl;
+			}
+	}
+	
 	return s.str();
 	/*string diasSemana[] = {"Lunes", "Martes","Miércoles","Jueves","Viernes","Sábado"};
 	string horas[] = { "9:00", "10:00", "11:00", "13:00", "14:00", "15:00", "16:00" };
