@@ -27,7 +27,7 @@ Doctor* especialidad::encontrarDoc(int doct) {
 string especialidad::getNombre() {
 	return nombre;
 }
-string especialidad::getDoctor() {
+string especialidad::mostrarDoctor() {
 	stringstream s;
 	for (int i = 0;i < cantDoc;i++) {
 		s<<(i+1)<<"- "<<doc[i]->getNombreDoc() << endl;
@@ -35,6 +35,15 @@ string especialidad::getDoctor() {
 	}
 	return s.str();
 	
+}
+string especialidad::getDoctor(string doct) {
+	string docaux;
+	for (int i = 0;i < cantDoc;i++) {
+		doc[i]->getNombreDoc() = docaux;
+		if (docaux == doct) {
+			return docaux;
+		}
+	}
 }
 especialidad::~especialidad() {
 

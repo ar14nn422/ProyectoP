@@ -147,6 +147,7 @@ void menuprincipal::opcionDos() {
 		dseleccionado = duennos->encontrarId(idDuenno);
 		if (!dseleccionado) {
 			cout << "Dueño no encontrado" << endl;
+			break;
 		}
 		else {
 			cout << "Encontrado" << endl;
@@ -154,19 +155,29 @@ void menuprincipal::opcionDos() {
 		cout << dseleccionado->mostrarMasc_d() << endl;
 		cout << "Ingrese la mascota a la cual se le asignara la cita(nombre completo):" << endl;
 		getline(cin, nombrem);
+		system("cls");
 		mseleccionada = dseleccionado->seleccionarMasc(nombrem);
 		if (mseleccionada) {
 			cout << "Paciente seleccionado:" << mseleccionada->getNombre() << endl;
 		}
+		else { 
+			cout << "La mascota no esta en el sistema" << endl;
+			break; }
 		cout << "Seleccione la especialidad que desea:" << endl;
 		cout << esp->toStringEspc();
 		cin >> opcion;
+		system("cls");
 		espSeleccionada = esp->encontrarEspecialidad(opcion - 1);
 		if (espSeleccionada) {
 			cout << espSeleccionada->getNombre() << endl;
 		}
-		cout << espSeleccionada->getDoctor() << endl;
+		else {
+			cout << "Especialidad no encontrada" << endl;
+			break; }
+		cout << "Doctores de la especialidad " << espSeleccionada->getNombre() << endl;
+		cout << espSeleccionada->mostrarDoctor() << endl;
 		cin >> opcion;
+		system("cls");
 		docSeleccionado = espSeleccionada->encontrarDoc(opcion - 1);
 		if (docSeleccionado) {
 			cout << "Doctor seleccionado:" << docSeleccionado->getNombreDoc() << endl;
@@ -176,7 +187,7 @@ void menuprincipal::opcionDos() {
 		cin >> dia;
 		cout << "Ingrese la hora:" << endl;
 		cin >> hora;
-		if (hora > 17 && hora < 9 && hora == 12) {
+		if (hora > 19 && hora < 8 && hora == 12) {
 			cout << "Esta hora no se encuentra disponible" << endl;
 		}
 		docSeleccionado->reservar(dia, hora);
@@ -212,7 +223,7 @@ void menuprincipal::opcionDos() {
 		}
 
 		cout << "Seleccione el doctor para ver su calendario de citas:" << endl;
-		cout << espSeleccionada->getDoctor() << endl;
+		cout << espSeleccionada->mostrarDoctor() << endl;
 		cin >> opcion;
 
 		docSeleccionado = espSeleccionada->encontrarDoc(opcion - 1);

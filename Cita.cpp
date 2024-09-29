@@ -103,6 +103,6 @@ string Cita::ImprimirCita()
 	stringstream s;
 	s << "Dia de su cita:" << dia << endl;
 	s << "Hora de su cita:" << hora << endl;
-	s << "Para el paciente:" << paciente << endl;
+	s << "Para el paciente:" << paciente->getNombre() << endl;
 	return s.str();
 }
