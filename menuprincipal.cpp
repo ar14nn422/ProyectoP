@@ -9,12 +9,18 @@ void menuprincipal::menu() {
 	int respuesta;
 	char respuestaFinal;
 	do {
-		cout << "Menu principal del sistema hospitalario" << endl << endl;
-		cout << "1-Submenu de Administracion" << endl;
-		cout << "2-Submenu de control de citas" << endl;
-		cout << "3-Submenu para Busquedas y listados" << endl;
-		cout << "Favor ingrese su respuesta: " << endl;
+		cout << "================================" << endl;
+		cout << "Sistema Hospital Veterinario UNA" << endl;
+		cout << "================================" << endl<<endl;
+		cout << "1-Submenu de Administracion" << endl << endl;
+		cout << "2-Submenu de control de citas" << endl << endl;
+		cout << "3-Submenu para Busquedas y listados" << endl<<endl;
+		cout << "4-Salir del sistema" << endl<<endl;
+		cout << "Ingrese la opcion que desea: " << endl;
 		cin >> respuesta;
+		if (respuesta > 4 && respuesta < 1) {
+			break;
+		}
 		switch (respuesta)
 		{
 		case 1:
@@ -29,6 +35,8 @@ void menuprincipal::menu() {
 			system("cls");
 			opcionTres();
 			break;
+		case 4:
+			exit(0);
 		default:
 			system("cls");
 			break;
@@ -49,33 +57,43 @@ void menuprincipal::opcionUno() {
 	string nombreMas;
 	Duenno* dseleccionado = nullptr;
 	mascota* mseleccionada = nullptr;
+	especialidad* espSeleccionada = nullptr;
+	cout << "----------------------------" << endl<<endl;
 	cout << "Submenu de administracion" << endl << endl;
-	cout << "1-Ingresar especialidades" << endl;
-	cout << "2-Ingresar Doctor (Por especialidad)" << endl;
-	cout << "3-Ingresar Duenno" << endl;
-	cout << "4- Ingresar Mascota(por duenno)" << endl;
-	cout << "0-Regresar al menu principal" << endl;
-	cout << "Favor ingrese su respuesta: " << endl;
+	cout << "----------------------------" << endl;
+	cout << "1-Ingresar especialidades" << endl<<endl;
+	cout << "2-Ingresar Doctor (Por especialidad)" << endl<<endl;
+	cout << "3-Ingresar Duenno" << endl<<endl;
+	cout << "4- Ingresar Mascota(por duenno)" << endl<<endl;
+	cout << "0-Regresar al menu principal" << endl<<endl;
+	cout << "Ingrese la opcion que desea: " << endl;
 	cin >> respuesta;
+
 	switch (respuesta) {
 	case 1:
 		system("cls");
 		cin.get();
-		cout << "Favor ingrese el nombre de la especialidad" << endl;
+		cout << "Ingrese el nombre de la especialidad" << endl;
 		getline(cin, nombEsp);
 		if (esp->adminOpUno(nombEsp) != true) {
-			cout << "No se pueden registrar mas especialidades" << endl;
+			cout << "No se puede registrar mas especialidades" << endl;
 		}
 		break;
 	case 2:
 		system("cls");
-		cout << "Favor seleccione la especialidad en la que desea registrar al doctor" << endl;
+		cout << "Seleccione la especialidad en la que desea registrar al doctor" << endl;
 		cout << esp->toStringEspc();
-		cin >> opUsuar;
+		cin >> opUsuar;		
+		espSeleccionada = esp->encontrarEspecialidad(opUsuar-1);
+		if (!espSeleccionada) {
+			cout << "Ingrese especialidades para registrar doctores" << endl;
+			break;
+		}
 		system("cls");
 		cin.get();
-		cout << "Favor ingrese el nombre del doctor" << endl;
+		cout << "Ingrese el nombre del doctor" << endl;
 		getline(cin, nomDoc);
+
 		system("cls");
 		if (esp->adminOpDos(opUsuar - 1, nomDoc) == true) {
 			cout << "Se ha registrado un doctor" << endl << endl;
@@ -86,22 +104,27 @@ void menuprincipal::opcionUno() {
 		break;
 	case 3:
 		system("cls");
-		cout << "Favor ingrese el nombre del duenno" << endl;
+		cout << "Ingrese el nombre del duenno" << endl;
 		cin.get();
 		getline(cin, duennoNomb);
-		cout << "Favor ingrese el id del duenno" << endl;
+		cout << "Ingrese el id del duenno" << endl;
 		cin >> duenoId;
 
 		duennos->ingresarDuennos(duennoNomb, duenoId);
 		break;
 	case 4:
 		system("cls");
-		cout << "Favor ingrese su id" << endl;
+		cout << "Ingrese el id del duenno" << endl;
 		cin >> duenoId;
-		cout << "Favor ingrese el nombre de la mascota" << endl;
+		dseleccionado = duennos->encontrarId(duenoId);
+		if (!dseleccionado) {
+			cout << "No se encontro el duenno correspondiente" << endl;
+			break;
+		}
+		cout << "Ingrese el nombre de la mascota" << endl;
 		cin.get();
 		getline(cin, nombreMas);
-		dseleccionado = duennos->encontrarId(duenoId);
+		
 		dseleccionado->asignarMascotas(nombreMas);
 		duennos->ingresarMascotas(duenoId, nombreMas);
 		mseleccionada = dseleccionado->seleccionarMasc(nombreMas);
@@ -110,7 +133,7 @@ void menuprincipal::opcionUno() {
 		system("cls");
 		break;
 	default:
-		cout << "Favor ingrese una opcion valida" << endl;
+		cout << "Ingrese una opcion valida" << endl;
 		system("cls");
 		opcionUno();
 		break;
@@ -129,13 +152,15 @@ void menuprincipal::opcionDos() {
 	Doctor* docSeleccionado = nullptr;
 	Doctor* docAsociados = nullptr;
 	Cita* c1 = nullptr;
+	cout << "----------------------------" << endl << endl;
 	cout << "Submenu de control de citas" << endl << endl;
-	cout << "1-Sacar Cita" << endl;
-	cout << "2-Cancelar Cita" << endl;
-	cout << "3-Mostrar Calendario de Citas por Doctor" << endl;
-	cout << "4- Mostrar Citas por Duenno" << endl;
-	cout << "0-Regresar al menu principal" << endl;
-	cout << "Favor ingrese su respuesta: " << endl;
+	cout << "----------------------------" << endl<<endl;
+	cout << "1-Sacar Cita" << endl<<endl;
+	cout << "2-Cancelar Cita" << endl<<endl;
+	cout << "3-Mostrar Calendario de Citas por Doctor" << endl<<endl;
+	cout << "4- Mostrar Citas por Duenno" << endl<<endl;
+	cout << "0-Regresar al menu principal" << endl<<endl;
+	cout << "Ingrese la opcion que desea: " << endl<<endl;
 	cin >> respuesta;
 	cin.ignore();
 
@@ -146,12 +171,13 @@ void menuprincipal::opcionDos() {
 		getline(cin, idDuenno);
 		dseleccionado = duennos->encontrarId(idDuenno);
 		if (!dseleccionado) {
-			cout << "Dueño no encontrado" << endl;
+			cout << "Duenno no encontrado" << endl;
 			break;
 		}
 		else {
 			cout << "Encontrado" << endl;
 		}
+		
 		cout << dseleccionado->mostrarMasc_d() << endl;
 		cout << "Ingrese la mascota a la cual se le asignara la cita(nombre completo):" << endl;
 		getline(cin, nombrem);
@@ -161,7 +187,7 @@ void menuprincipal::opcionDos() {
 			cout << "Paciente seleccionado:" << mseleccionada->getNombre() << endl;
 		}
 		else { 
-			cout << "La mascota no esta en el sistema" << endl;
+			cout << "La mascota no se encuentra en el sistema o el duenno no posee mascotas asociadas" << endl;
 			break; }
 		cout << "Seleccione la especialidad que desea:" << endl;
 		cout << esp->toStringEspc();
@@ -273,7 +299,7 @@ void menuprincipal::opcionTres() {
 	cout << "3-Mostrar Duennos por Mascotas" << endl;
 	cout << "4- Mostrar Pacientes por Doctor" << endl;
 	cout << "0-Regresar al menu principal" << endl;
-	cout << "Favor ingrese su respuesta: " << endl;
+	cout << "Ingrese la opcion que desea: " << endl;
 	cin >> respuesta;
 	switch (respuesta) {
 	case 1:
