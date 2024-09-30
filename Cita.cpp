@@ -1,20 +1,20 @@
 ﻿#include "Cita.h"
 
-Cita::Cita(int hora, string dia, bool estado, especialidad* espe, Doctor* doctor, Duenno* duenno, mascota* paciente)
+Cita::Cita(int hora, int dia, bool estado, especialidad* espe, Doctor* doctor, Duenno* duenno, mascota* paciente)
 {
 	this->hora = hora;
 	this->dia = dia;
 	this->estado = estado;
-	this->espe = espe;//
-	this->doctor = doctor;//
+	this->espe = espe;
+	this->doctor = doctor;
 	this->duenno = duenno;
 	this->paciente = paciente;
 }
 
 Cita::Cita()
 {
-	hora = 0;
-	dia = " ";
+	hora =0;
+	dia = 0;
 	estado = false;
 	espe = nullptr;
 	doctor = nullptr;
@@ -27,7 +27,7 @@ int Cita::getHora()
 	return hora;
 }
 
-string Cita::getDia()
+int Cita::getDia()
 {
 	return dia;
 }
@@ -37,7 +37,7 @@ void Cita::setHora(int hora)
 	this->hora = hora;
 }
 
-void Cita::setDia(string dia)
+void Cita::setDia(int dia)
 {
 	this->dia = dia;
 }
@@ -49,7 +49,7 @@ void Cita::setEstado(bool estado)
 
 bool Cita::getEstado()
 {
-	return false;
+	return estado;
 }
 
 Doctor* Cita::getDoctor()
@@ -104,5 +104,6 @@ string Cita::ImprimirCita()
 	s << "Dia de su cita:" << dia << endl;
 	s << "Hora de su cita:" << hora << endl;
 	s << "Para el paciente:" << paciente->getNombre() << endl;
+	s << "Con el doctor:" << doctor->getNombreDoc() << endl;
 	return s.str();
 }

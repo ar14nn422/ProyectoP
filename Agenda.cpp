@@ -48,25 +48,46 @@ void Agenda::agregarCita(Cita* nuevaCita)
 	}
 }
 
-/*Doctor* Agenda::asociadosDuenno(Duenno* duenno)
+bool Agenda::reservarCita(Doctor* doctor, int dia, int hora,Cita* ncita) {
+	int totalHoras = doctor->gettotalHoras();
+	horas** horario = doctor->getHorario();
+	int indiceHora = hora - 8;
+	int indiceDia = dia - 1;
+	int indice = indiceDia * totalHoras + indiceHora;
+	if (!horario[indice]->getEstado()) {
+		horario[indice]->setEstado(true);
+		ncita->setDoctor(doctor);
+		agregarCita(ncita);  
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+string Agenda::asociadosDuenno(Duenno* duenno)
 {
-	Doctor* docAsociados = nullptr;
+	stringstream s;
+	bool hayDoctores = false;
 
 	for (int i = 0; i < cant; i++) {
 		Cita* citaActual = cita[i];
+
+		s << "Verificando citas de duenno ID: " << duenno->getId();
+			s<< " con cita duenno ID: " << citaActual->getDuenno()->getId() << endl;
+
 		if (citaActual->getDuenno()->getId() == duenno->getId()) {
 			Doctor* doctorCita = citaActual->getDoctor();
-			return docAsociados;
+			if (doctorCita) {
+				s << "- " << doctorCita->getNombreDoc() << endl;
+				hayDoctores = true;
+			}
 		}
-
 	}
-}*/
-
-/*void Agenda::cancelarCita(string idDuenno)
-{
+	return s.str();
 }
-*/
-string Agenda::mostrarCitasDia(string dia)
+
+string Agenda::mostrarCitasDia(int dia)
 {
 	stringstream s;
 	for (int i = 0; i < cant; i++) {
@@ -81,7 +102,7 @@ string Agenda::mostrarCitasDia(string dia)
 
 	return string();
 }
-string Agenda::mostrarCitasDuenno(Duenno* duenno)
+string Agenda::mostrarCitasDuenno(Duenno* duenno)//
 {
 	stringstream ss;
 	bool citasEncontradas = false;
@@ -105,7 +126,4 @@ string Agenda::mostrarCitasDuenno(Duenno* duenno)
 	return ss.str();
 }
 
-	//string Agenda::mostrarCitas()
-	//{
-	//	return string();
-	//}
+

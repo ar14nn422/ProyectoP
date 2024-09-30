@@ -7,19 +7,27 @@ class Doctor {
 private:
 	int totalDias;
 	int totalHoras;
-	int tam;
-	int cant;
 	string nombre;
+	string dia[7] ; 
+	int cant;
+	int tam;
 	mascota** masc;
 	horas** horario;
 
 public:
 	Doctor(string);
-	bool reservar(string, int);
 	string mostrarHorario();
 	void agregarPaciente(mascota*);
 	void borrarPaciente();
 	string getPacientes();
+	void settotalHoras(int);
+	void settotalDias(int);
+	int gettotalHoras();
+	int gettotalDias();
+	void setHorario(horas**);
+	horas** getHorario();
+	void setDias(string);
+	string* getDias();
 	string getNombreDoc();
 	~Doctor();
 };

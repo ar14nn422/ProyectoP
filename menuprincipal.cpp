@@ -144,16 +144,16 @@ void menuprincipal::opcionDos() {
 	int opcion;
 	string nombrem;
 	string idDuenno;
-	string dia;
-	int hora = 0;
+	int dia;
+	int hora;
 	Duenno* dseleccionado = nullptr;
 	mascota* mseleccionada = nullptr;
 	especialidad* espSeleccionada = nullptr;
 	Doctor* docSeleccionado = nullptr;
-	Doctor* docAsociados = nullptr;
+	string docAsociados;
 	Cita* c1 = nullptr;
-	cout << "----------------------------" << endl << endl;
-	cout << "Submenu de control de citas" << endl << endl;
+	cout << "----------------------------" << endl;
+	cout << "Submenu de control de citas" << endl;
 	cout << "----------------------------" << endl<<endl;
 	cout << "1-Sacar Cita" << endl<<endl;
 	cout << "2-Cancelar Cita" << endl<<endl;
@@ -209,30 +209,38 @@ void menuprincipal::opcionDos() {
 			cout << "Doctor seleccionado:" << docSeleccionado->getNombreDoc() << endl;
 		}
 		cout << docSeleccionado->mostrarHorario() << endl;
-		cout << "Ingrese el dia:" << endl;
+		cout << "Ingrese el dia(1:Lunes a 6:Sabado):" << endl;
 		cin >> dia;
-		cout << "Ingrese la hora:" << endl;
+		cout << endl;
+	
+		cout << "Ingrese la hora(Hora militar):" << endl;
 		cin >> hora;
-		if (hora > 19 && hora < 8 && hora == 12) {
+		if (hora > 18 && hora < 8) {
 			cout << "Esta hora no se encuentra disponible" << endl;
 		}
-		docSeleccionado->reservar(dia, hora);
+		else {
 		c1 = new Cita(hora, dia, true, espSeleccionada, docSeleccionado, dseleccionado, mseleccionada);
+		citas->reservarCita(docSeleccionado,dia, hora, c1);
+		citas->agregarCita(c1);
 		cout << c1->ImprimirCita();
-		delete c1;
-
-
+		}
 		break;
 	case 2:
+		system("cls");
 		cout << "Ingrese el id del dueño:" << endl;
 		getline(cin, idDuenno);
 		dseleccionado = duennos->encontrarId(idDuenno);
 		if (dseleccionado == nullptr) {
-			cout << "No se encontró ningún dueño con este id" << endl;
+			cout << "No se encontro ningun duenno con este id" << endl;
 		}
-		//docAsociados = citas->asociadosDuenno(dseleccionado);
+		else{
+			docAsociados = citas->asociadosDuenno(dseleccionado);
+				cout <<docAsociados;
+			
+		}
+		delete c1;
 
-		system("cls");
+		
 		break;
 	case 3:
 
@@ -260,6 +268,7 @@ void menuprincipal::opcionDos() {
 
 		cout << "Calendario de citas del Dr. " << docSeleccionado->getNombreDoc() << ":" << endl;
 		cout << docSeleccionado->mostrarHorario();
+		
 
 		break;
 	case 4:
@@ -281,7 +290,7 @@ void menuprincipal::opcionDos() {
 		system("cls");
 		break;
 	default:
-		cout << "Favor ingrese una opcion valida" << endl;
+		cout << "Ingrese una opcion valida" << endl;
 		system("cls");
 		opcionDos();
 		break;
@@ -293,7 +302,9 @@ void menuprincipal::opcionTres() {
 	int verDoc;
 	string idDuenno;
 	string pacientes;
-	cout << "Submenu para Busquedas y listados" << endl << endl;
+	cout << "---------------------------------" << endl;
+	cout << "Submenu para Busquedas y listados" << endl;
+	cout << "---------------------------------" << endl<<endl;
 	cout << "1-Mostrar Listados de Especialidades" << endl;
 	cout << "2-Mostrar Listado de Doctores por Especialidad" << endl;
 	cout << "3-Mostrar Duennos por Mascotas" << endl;
@@ -308,33 +319,33 @@ void menuprincipal::opcionTres() {
 		break;
 	case 2:
 		system("cls");
-		cout << "Favor seleccione el numero asociado a la especialidad de la que desea ver los doctores" << endl;
+		cout << "Seleccione el numero asociado a la especialidad de la que desea ver los doctores" << endl;
 		cout << esp->toStringEspc();
 		cin >> verDoc;
 		system("cls");
 		cout << "Doctores de la especialidad " << esp->getEspecialidad(verDoc - 1) << endl;
-		cout << esp->toStringDocs(verDoc);
+		cout << esp->toStringDocs(verDoc)<<endl;
 		break;
 	case 3:
 		system("cls");
-		cout << "Favor ingrese su id" << endl;
+		cout << "Ingrese el id del duenno:" << endl;
 		cin >> idDuenno;
-		cout << "A continuacion se le mostraran sus mascotas" << endl;
+		cout << "Mascotas:" << endl;
 		cout << duennos->mostrarMascotas(idDuenno) << endl;
 		break;
 	case 4:
 		system("cls");
-		cout << "Favor ingrese el nombre del doctor" << endl;
+		cout << "Ingrese el nombre del doctor:" << endl;
 		cin >> pacientes;
 		system("cls");
-		cout << "Estos son los pacientes registrados con este doctor" << endl;
+		cout << "Estos son los pacientes registrados con este doctor:" << endl;
 		cout << esp->getPacientes(pacientes) << endl;
 		break;
 	case 0:
 		system("cls");
 		break;
 	default:
-		cout << "Favor ingrese una opcion valida" << endl;
+		cout << "Ingrese una opcion valida" << endl;
 		system("cls");
 		opcionDos();
 		break;

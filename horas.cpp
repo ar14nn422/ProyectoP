@@ -38,3 +38,8 @@ string horas::getDia()
 {
 	return dia;
 }
+string horas::mostrarHora() {
+	stringstream s;
+	s << "Hora: " << (hora < 11 ? "0" : "") << hora << ":00 - " << (ocupado ? "Ocupado" : "Libre");
+	return s.str();
+}

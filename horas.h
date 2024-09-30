@@ -18,6 +18,6 @@ public:
 	int getHora();
 	void setDia(string);
 	string getDia();
-	//string horario();
+	string mostrarHora();
 };
 #endif // !HORAS_H

@@ -3,60 +3,44 @@
 Doctor::Doctor(string nomb)
 {
 	nombre = nomb;
+	totalHoras = 11;
+	totalDias = 7;
 	cant = 0;
-	tam = 0;
-	totalHoras = 10;
-	totalDias = 6;
+	tam=1;
+	dia[0] = "No existe";
+	dia[1] = "Lunes";
+	dia[2] = "Martes";
+	dia[3] = "Miercoles";
+	dia[4] = "Jueves";
+	dia[5] = "Viernes";
+	dia[6] = "Sabado";
 	masc = new mascota * [tam];
-	horario = new horas*[totalDias*totalHoras];
-	for (int i = 0; i < totalDias * totalHoras; i++) {
-		horario[i] = new horas(); 
-	}
-}
-
-bool Doctor::reservar(string dia, int hora)
-{
-if (horario[cant]->getEstado() == false) {
-		horario[cant]->setEstado(true);
-		cant++;
-		return true;
-	}
-	else {
-		return false;
-	}
-}
-string Doctor::mostrarHorario()
-{
-	int dia = 0;
-	string diasSemana[] = { "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado" };
-	string horas[] = {"8:00", "9:00", "10:00", "11:00", "13:00", "14:00", "15:00", "16:00","17:00","18:00"};
-	stringstream s;
-
-	s << "Horario del doctor: " << nombre << endl;
-	for (dia;dia < totalDias;dia++) {
-		s << diasSemana[dia] << ":" << endl;
-			for (int hora = 0; hora < 10; hora++) {
-				int aux = dia * totalHoras + hora;
-				bool estado = horario[aux]->getEstado();
-
-
-				s <<aux+1<<"- " << horas[hora] << " - " << (estado ? "Ocupado" : "Libre") << endl;
-			}
-	}
-	
-	return s.str();
-	/*string diasSemana[] = {"Lunes", "Martes","Miércoles","Jueves","Viernes","Sábado"};
-	string horas[] = { "9:00", "10:00", "11:00", "13:00", "14:00", "15:00", "16:00" };
-	stringstream s;
-	s << "Horario del doctor:" << nombre << endl;
-	for (int dia = 0; dia < totalDias; dia++) {
-		s << diasSemana[dia] << ":" << endl;
-		for (int hora = 0; hora < totalHoras; hora++) {
-			int aux = dia * hora;
-			bool estado = horario[aux]->getEstado();
+	horario = new horas * [totalDias * totalHoras]; 
+	for (int i = 0; i < totalDias; i++) {
+		for (int j = 0; j < totalHoras; j++) {
+			horario[i * totalHoras + j] = new horas(dia[i], 8 + j); 
 		}
 	}
-	return s.str();*/
+}
+
+
+string Doctor::mostrarHorario()
+{
+	stringstream s;
+	s << "Horario de " << nombre << ":"<< endl;
+	s << "----------------------------------------------------------------------------------------------------------------------"<<endl;
+	s << "Dia      |  08:00  |  09:00  |  10:00  |  11:00  |  12:00  |  13:00  |  14:00  |  15:00  |  16:00  |  17:00  |  18:00"<<endl;
+	s << "----------------------------------------------------------------------------------------------------------------------"<<endl;
+
+	for (int i = 1; i < totalDias; i++) {
+		s << dia[i] << " |";
+		for (int j = 0; j < totalHoras; j++) {
+			s << "  " << (horario[(i-1) * totalHoras + j]->getEstado() ? "Ocupado" : "Libre") << "  |";
+		}
+		s << "\n";
+	}
+	return s.str();
+
 }
 
 void Doctor::agregarPaciente(mascota* paciente) {
@@ -82,6 +66,49 @@ string Doctor::getPacientes() {
 		s << masc[i]->mostrarMascota();
 	return s.str();
 }
+
+void Doctor::settotalHoras(int horas)
+{
+	totalHoras = horas;
+}
+
+void Doctor::settotalDias(int dias)
+{
+	totalDias = dias;
+}
+
+int Doctor::gettotalHoras()
+{
+	return totalHoras;
+}
+
+int Doctor::gettotalDias()
+{
+	return totalDias;
+}
+
+void Doctor::setHorario(horas** hor)
+{
+	horario = hor;
+}
+
+horas** Doctor::getHorario()
+{
+	return horario;
+}
+
+void Doctor::setDias(string dias)
+{
+	for (int i = 0; i < 7; i++) {
+		dia[i] = dias[i];
+	}
+}
+
+string* Doctor::getDias()
+{
+	return dia;
+}
+
 string Doctor::getNombreDoc() {
 	return nombre;
 }

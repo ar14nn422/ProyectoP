@@ -5,19 +5,19 @@
 class Cita {
 private:
 	int hora;
-	string dia;
+	int dia;
 	bool estado;
 	especialidad* espe;
 	Doctor* doctor;
 	Duenno* duenno;
 	mascota* paciente;
 public:
-	Cita(int, string, bool, especialidad*,Doctor*, Duenno*, mascota*);
+	Cita(int,int, bool, especialidad*,Doctor*, Duenno*, mascota*);
 	Cita();
 	int getHora();
-	string getDia();
+	int getDia();
 	void setHora(int);
-	void setDia(string);
+	void setDia(int);
 	void setEstado(bool);
 	bool getEstado();
 	Doctor* getDoctor();
