@@ -337,7 +337,7 @@ void menuprincipal::opcionTres() {
 		system("cls");
 		cout << "Ingrese el nombre del doctor:" << endl;
 		cin >> doctor;
-		cout<<esp->getPacientes(doctor);
+
 		break;
 	case 0:
 		system("cls");

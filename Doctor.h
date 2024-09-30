@@ -17,7 +17,6 @@ private:
 
 public:
 	Doctor(string);
-	Doctor();
 	string mostrarHorario();
 	void agregarPaciente(mascota*);
 	void borrarPaciente(string);
