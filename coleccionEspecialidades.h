@@ -16,6 +16,7 @@ public:
 	string toStringEspc();
 	string toStringDocs(int);
 	string getPacientes(string);
+	Doctor* encontrarDocN(string);
 	~coleccionespecialidades();
 };
 #endif // !COLECCIONESPECIALIDADES_H

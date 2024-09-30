@@ -57,6 +57,15 @@ string coleccionespecialidades::getPacientes(string doc) {
 	}
 	return s.str();
 }
+Doctor* coleccionespecialidades::encontrarDocN(string docts)
+{
+	for (int i = 0; i < cantEsp; i++) {
+		if (doct[i]->getNombreDoc() == docts) {
+			return doct[i];
+		}
+	}
+	return nullptr;
+}
 
 coleccionespecialidades::~coleccionespecialidades() {
 	for (int i = 0;i < 7;i++) {
