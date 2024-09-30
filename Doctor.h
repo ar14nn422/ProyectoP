@@ -12,13 +12,15 @@ private:
 	int cant;
 	int tam;
 	mascota** masc;
+
 	horas** horario;
 
 public:
 	Doctor(string);
+	Doctor();
 	string mostrarHorario();
 	void agregarPaciente(mascota*);
-	void borrarPaciente();
+	void borrarPaciente(string);
 	string getPacientes();
 	void settotalHoras(int);
 	void settotalDias(int);
@@ -28,6 +30,7 @@ public:
 	horas** getHorario();
 	void setDias(string);
 	string* getDias();
+	void setNombre(string);
 	string getNombreDoc();
 	~Doctor();
 };

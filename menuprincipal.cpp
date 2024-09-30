@@ -4,6 +4,7 @@ menuprincipal::menuprincipal() {
 	esp = new coleccionespecialidades();
 	duennos = new ColeccionDueños();
 	citas = new Agenda(0);
+
 }
 void menuprincipal::menu() {
 	int respuesta;
@@ -58,9 +59,9 @@ void menuprincipal::opcionUno() {
 	Duenno* dseleccionado = nullptr;
 	mascota* mseleccionada = nullptr;
 	especialidad* espSeleccionada = nullptr;
-	cout << "----------------------------" << endl<<endl;
-	cout << "Submenu de administracion" << endl << endl;
 	cout << "----------------------------" << endl;
+	cout << "Submenu de administracion" << endl;
+	cout << "----------------------------" << endl<<endl;
 	cout << "1-Ingresar especialidades" << endl<<endl;
 	cout << "2-Ingresar Doctor (Por especialidad)" << endl<<endl;
 	cout << "3-Ingresar Duenno" << endl<<endl;
@@ -220,7 +221,7 @@ void menuprincipal::opcionDos() {
 		}
 		else {
 		c1 = new Cita(hora, dia, true, espSeleccionada, docSeleccionado, dseleccionado, mseleccionada);
-		citas->reservarCita(docSeleccionado,dia, hora, c1);
+		citas->reservarCita(docSeleccionado,dia, hora, c1,dseleccionado);
 		citas->agregarCita(c1);
 		cout << c1->ImprimirCita();
 		}
@@ -238,6 +239,7 @@ void menuprincipal::opcionDos() {
 				cout <<docAsociados;
 			
 		}
+
 		delete c1;
 
 		
@@ -301,16 +303,17 @@ void menuprincipal::opcionTres() {
 	int respuesta;
 	int verDoc;
 	string idDuenno;
+	string doctor;
 	string pacientes;
 	cout << "---------------------------------" << endl;
 	cout << "Submenu para Busquedas y listados" << endl;
 	cout << "---------------------------------" << endl<<endl;
-	cout << "1-Mostrar Listados de Especialidades" << endl;
-	cout << "2-Mostrar Listado de Doctores por Especialidad" << endl;
-	cout << "3-Mostrar Duennos por Mascotas" << endl;
-	cout << "4- Mostrar Pacientes por Doctor" << endl;
-	cout << "0-Regresar al menu principal" << endl;
-	cout << "Ingrese la opcion que desea: " << endl;
+	cout << "1-Mostrar Listados de Especialidades" << endl<<endl;
+	cout << "2-Mostrar Listado de Doctores por Especialidad" << endl<<endl;
+	cout << "3-Mostrar Duennos con sus Mascotas" << endl<<endl;
+	cout << "4- Mostrar Pacientes por Doctor" << endl<<endl;
+	cout << "0-Regresar al menu principal" << endl<<endl;
+	cout << "Ingrese la opcion que desea: " << endl<<endl;
 	cin >> respuesta;
 	switch (respuesta) {
 	case 1:
@@ -328,18 +331,13 @@ void menuprincipal::opcionTres() {
 		break;
 	case 3:
 		system("cls");
-		cout << "Ingrese el id del duenno:" << endl;
-		cin >> idDuenno;
-		cout << "Mascotas:" << endl;
-		cout << duennos->mostrarMascotas(idDuenno) << endl;
+		cout << duennos->mostrarDueños();
 		break;
 	case 4:
 		system("cls");
 		cout << "Ingrese el nombre del doctor:" << endl;
-		cin >> pacientes;
-		system("cls");
-		cout << "Estos son los pacientes registrados con este doctor:" << endl;
-		cout << esp->getPacientes(pacientes) << endl;
+		cin >> doctor;
+		cout<<esp->getPacientes(doctor);
 		break;
 	case 0:
 		system("cls");
@@ -356,6 +354,5 @@ menuprincipal::~menuprincipal() {
 	delete citas;
 	delete esp;
 	delete duennos;
-
 }
 

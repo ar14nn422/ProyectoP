@@ -13,6 +13,7 @@ public:
 	especialidad(string);
 	bool agregarDoc(string);
 	Doctor* encontrarDoc(int);
+	Doctor* encontrarDocN(string);
 	string getNombre();
 	string mostrarDoctor();
 	string getDoctor(string);

@@ -2,6 +2,7 @@
 #define COLECCIONMASCOTAS_H
 #include "mascota.h"
 
+
 class coleccionmascotas {
 private:
 	int cant;

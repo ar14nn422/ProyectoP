@@ -48,7 +48,7 @@ void Agenda::agregarCita(Cita* nuevaCita)
 	}
 }
 
-bool Agenda::reservarCita(Doctor* doctor, int dia, int hora,Cita* ncita) {
+bool Agenda::reservarCita(Doctor* doctor, int dia, int hora,Cita* ncita, Duenno* duenno) {
 	int totalHoras = doctor->gettotalHoras();
 	horas** horario = doctor->getHorario();
 	int indiceHora = hora - 8;
@@ -57,6 +57,7 @@ bool Agenda::reservarCita(Doctor* doctor, int dia, int hora,Cita* ncita) {
 	if (!horario[indice]->getEstado()) {
 		horario[indice]->setEstado(true);
 		ncita->setDoctor(doctor);
+		ncita->setDuenno(duenno);
 		agregarCita(ncita);  
 		return true;
 	}
@@ -70,20 +71,20 @@ string Agenda::asociadosDuenno(Duenno* duenno)
 	stringstream s;
 	bool hayDoctores = false;
 
+	s << "Verificando citas para el dueño ID: " << duenno->getId() << endl;
+
 	for (int i = 0; i < cant; i++) {
 		Cita* citaActual = cita[i];
 
-		s << "Verificando citas de duenno ID: " << duenno->getId();
-			s<< " con cita duenno ID: " << citaActual->getDuenno()->getId() << endl;
-
+		
 		if (citaActual->getDuenno()->getId() == duenno->getId()) {
 			Doctor* doctorCita = citaActual->getDoctor();
-			if (doctorCita) {
-				s << "- " << doctorCita->getNombreDoc() << endl;
-				hayDoctores = true;
-			}
+			s << "- Doctor: " << doctorCita->getNombreDoc() << endl;
+			hayDoctores = true; 
+			
 		}
 	}
+
 	return s.str();
 }
 
@@ -102,28 +103,28 @@ string Agenda::mostrarCitasDia(int dia)
 
 	return string();
 }
-string Agenda::mostrarCitasDuenno(Duenno* duenno)//
+string Agenda::mostrarCitasDuenno(Duenno* duenno)
 {
-	stringstream ss;
+	stringstream s;
 	bool citasEncontradas = false;
 
 	for (int i = 0; i < cant; i++) {
 		Cita* citaActual = cita[i];
 		if (citaActual->getDuenno()->getId() == duenno->getId()) {  
-			ss << "- Mascota: " << citaActual->getPaciente()->getNombre()
-				<< " | Doctor: " << citaActual->getDoctor()->getNombreDoc()
-				<< " | Especialidad: " << citaActual->getEspecialidad()->getNombre()
-				<< " | Dia: " << citaActual->getDia()
-				<< " | Hora: " << citaActual->getHora() << endl;
+			s << "- Mascota: " << citaActual->getPaciente()->getNombre();
+			s << " | Doctor: " << citaActual->getDoctor()->getNombreDoc();
+			s << " | Especialidad: " << citaActual->getEspecialidad()->getNombre();
+			s << " | Dia: " << citaActual->getDia();
+				s<< " | Hora: " << citaActual->getHora() << endl;
 			citasEncontradas = true;
 		}
 	}
 
 	if (!citasEncontradas) {
-		ss << "No hay citas para el dueño con ID: " << duenno->getId() << endl;
+		s << "No hay citas para el dueño con ID: " << duenno->getId() << endl;
 	}
 
-	return ss.str();
+	return s.str();
 }
 
 

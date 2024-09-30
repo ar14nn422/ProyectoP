@@ -58,6 +58,7 @@ mascota* coleccionmascotas::buscarporNombre(string nomb)
 
 
 
+
 string coleccionmascotas::mostrarMascotas()
 {
 	stringstream s;

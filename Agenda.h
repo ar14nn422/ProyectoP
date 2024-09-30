@@ -13,7 +13,7 @@ public:
 	int getTam();
 	int getCant();
 	void agregarCita(Cita*);
-	bool reservarCita(Doctor*, int, int, Cita*);
+	bool reservarCita(Doctor*, int, int, Cita*,Duenno*);
 	string asociadosDuenno(Duenno*);
 	string mostrarCitasDia(int);
 	string mostrarCitasDuenno(Duenno* duenno);

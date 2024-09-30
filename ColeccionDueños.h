@@ -9,6 +9,7 @@ private:
 	Duenno** duenno;
 	coleccionmascotas** mascotas;
 public:
+	
 	ColeccionDueños();
 	~ColeccionDueños();
 	void setTam();

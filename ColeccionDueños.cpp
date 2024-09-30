@@ -89,8 +89,8 @@ string ColeccionDueños::mostrarDueños()
 {
 	stringstream s;
 	for (int i = 0; i < cant; i++) {
-		s <<"Duenno:"<< duenno[i]->getNombreDuenno() << "   "<<"Id:"<< duenno[i]->getId() << endl;
-		s << duenno[i]->mostrarMasc_d() << endl;
+		s<<duenno[i]->mostrarMasc_d() << endl;
+
 	}
 
 	return s.str();

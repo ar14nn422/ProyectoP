@@ -24,6 +24,15 @@ Doctor* especialidad::encontrarDoc(int doct) {
 	}
 	return nullptr; 
 }
+Doctor* especialidad::encontrarDocN(string doct)
+{
+	for (int i = 0; i < cantDoc; i++) {
+		if (doc[i]->getNombreDoc() == doct) { 
+			return doc[i]; 
+		}
+	}
+	return nullptr;
+}
 string especialidad::getNombre() {
 	return nombre;
 }
